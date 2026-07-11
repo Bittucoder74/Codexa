@@ -1,96 +1,64 @@
-<!--====================================
-        Navbar Start
-=====================================-->
+<!--
+  ==================================================
+  COMPONENT: NAVBAR
+  --------------------------------------------------
+  Loaded into every page via [data-cx-include].
+  Paths are root-relative ("/pages/...", "/assets/...")
+  so the same partial works whether it's included from
+  index.html or from a nested page under /pages/.
+  This assumes the site is served from its domain root —
+  standard for a static deployment.
+  ================================================== -->
 
-<header class="cx-header">
+<nav class="cx-navbar navbar navbar-expand-lg">
+  <div class="cx-container cx-navbar-inner">
 
-    <nav class="navbar navbar-expand-lg cx-navbar">
+    <!-- Brand lockup: logomark + two-line wordmark -->
+    <a class="cx-navbar-brand" href="/index.html" aria-label="Codexa Tech Academy — Home">
+      <span class="cx-navbar-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cxLogoGradient" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="var(--cx-primary)" />
+              <stop offset="1" stop-color="var(--cx-accent)" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="44" height="44" rx="12" fill="url(#cxLogoGradient)" />
+          <path d="M17 14 L10.5 22 L17 30" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M27 14 L33.5 22 L27 30" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="22" cy="22" r="2.5" fill="var(--cx-secondary)" />
+        </svg>
+      </span>
+      <span class="cx-navbar-wordmark">
+        <span class="cx-navbar-name">Codexa</span>
+        <span class="cx-navbar-subname">Tech Academy</span>
+      </span>
+    </a>
 
-        <div class="container">
+    <!-- Mobile toggler (behavior wired up in the Responsive pass) -->
+    <button class="cx-navbar-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cxNavbarMenu" aria-controls="cxNavbarMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="cx-navbar-toggler-bar"></span>
+      <span class="cx-navbar-toggler-bar"></span>
+      <span class="cx-navbar-toggler-bar"></span>
+    </button>
 
-            <!-- Logo -->
-            <a class="navbar-brand cx-logo" href="../index.html">
-                Codexa
-            </a>
+    <div class="collapse navbar-collapse cx-navbar-collapse" id="cxNavbarMenu">
 
-            <!-- Mobile Toggle -->
-            <button
-                class="navbar-toggler cx-menu-btn"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainMenu"
-                aria-controls="mainMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+      <!-- Primary navigation -->
+      <ul class="cx-navbar-links">
+        <li><a class="cx-navbar-link" href="/pages/about.html">About</a></li>
+        <li><a class="cx-navbar-link" href="/pages/courses.html">Courses</a></li>
+        <li><a class="cx-navbar-link" href="/pages/placement.html">Placements</a></li>
+        <li><a class="cx-navbar-link" href="/pages/gallery.html">Gallery</a></li>
+        <li><a class="cx-navbar-link" href="/pages/contact.html">Contact</a></li>
+      </ul>
 
-                <span class="navbar-toggler-icon"></span>
+      <!-- Actions -->
+      <div class="cx-navbar-actions">
+        <a class="cx-btn cx-btn-outline cx-btn-sm cx-navbar-btn-outline" href="/pages/faq.html">FAQ</a>
+        <a class="cx-btn cx-btn-primary cx-btn-sm cx-navbar-btn-primary" href="/pages/admission.html">Apply Now</a>
+      </div>
 
-            </button>
-
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="mainMenu">
-
-                <ul class="navbar-nav mx-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link cx-nav-link active" href="../index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link cx-nav-link" href="../pages/about.html">
-                            About
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link cx-nav-link" href="../pages/courses.html">
-                            Courses
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link cx-nav-link" href="../pages/admission.html">
-                            Admission
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link cx-nav-link" href="../pages/contact.html">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-                <!-- Right Side -->
-                <div class="d-flex align-items-center gap-3">
-
-                    <!-- Theme Button -->
-                    <button id="theme-btn" class="cx-theme-btn">
-
-                        <i class="fa-solid fa-moon"></i>
-
-                    </button>
-
-                    <!-- Apply Button -->
-                    <a href="../pages/admission.html" class="btn cx-btn-primary">
-
-                        Apply Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-</header>
-
-<!--====================================
-        Navbar End
-=====================================-->
+    </div>
+  </div>
+</nav>

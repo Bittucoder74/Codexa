@@ -1,120 +1,161 @@
-/*====================================
-    CSS Reset
-====================================*/
+/* ==================================================
+   CODEXA TECH ACADEMY — GLOBAL BASE STYLES
+   Resets, typography and shared utility classes.
+   Bootstrap handles grid/layout; this file only
+   carries what Bootstrap cannot express.
+   ================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family:var(--font-primary);
-    background:var(--clr-body);
-    color:var(--clr-text);
-    line-height:1.6;
-    overflow-x:hidden;
-    transition:var(--transition);
+body {
+  font-family: var(--cx-font-body);
+  font-size: var(--cx-fs-base);
+  font-weight: 400;
+  color: var(--cx-text);
+  background-color: var(--cx-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
-
-/*====================================
-    Common Elements
-====================================*/
-
-img{
-    max-width:100%;
-    display:block;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-ul{
-    list-style:none;
+ul {
+  list-style: none;
 }
 
-button,
-input,
-textarea,
-select{
-    font-family:inherit;
-    border:none;
-    outline:none;
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-button{
-    cursor:pointer;
-    /*background:none;*/
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--cx-font-display);
+  color: var(--cx-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-textarea{
-    resize:none;
+h1 { font-size: var(--cx-fs-5xl); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: var(--cx-fs-3xl); font-weight: 800; letter-spacing: -0.015em; }
+h3 { font-size: var(--cx-fs-2xl); }
+h4 { font-size: var(--cx-fs-xl); }
+
+p {
+  color: var(--cx-text);
 }
 
-
-/*====================================
-    Typography
-====================================*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    color:var(--clr-heading);
-    font-weight:700;
-    line-height:1.2;
+/* ---------- Layout helpers ---------- */
+.cx-container {
+  width: 100%;
+  max-width: var(--cx-container-max);
+  margin-inline: auto;
+  padding-inline: var(--cx-space-lg);
 }
 
-p{
-    color:var(--clr-text);
+.cx-section {
+  padding-block: var(--cx-space-2xl);
 }
 
-
-/*====================================
-    Section
-====================================*/
-
-section{
-    padding:var(--space-3xl) 0;
+/* ---------- Eyebrow / badge, shared across sections ---------- */
+.cx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cx-primary);
+  background-color: var(--cx-primary-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--cx-radius-pill);
 }
 
-
-/*====================================
-    Selection
-====================================*/
-
-::selection{
-    background:var(--clr-primary);
-    color:#fff;
+/* ---------- Buttons ---------- */
+.cx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-sm);
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--cx-radius-pill);
+  transition: transform var(--cx-transition-fast), box-shadow var(--cx-transition-fast), background-color var(--cx-transition-fast), color var(--cx-transition-fast), border-color var(--cx-transition-fast);
+  white-space: nowrap;
 }
 
-
-/*====================================
-    Scrollbar
-====================================*/
-
-::-webkit-scrollbar{
-    width:10px;
+.cx-btn:hover {
+  transform: translateY(-2px);
 }
 
-::-webkit-scrollbar-track{
-    background:var(--clr-body);
+.cx-btn-primary {
+  background: var(--cx-gradient-brand);
+  color: #FFFFFF;
+  box-shadow: var(--cx-shadow-brand);
 }
 
-::-webkit-scrollbar-thumb{
-    background:var(--clr-primary);
-    border-radius:50px;
+.cx-btn-primary:hover {
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28);
 }
 
-::-webkit-scrollbar-thumb:hover{
-    background:var(--clr-secondary);
+.cx-btn-outline {
+  background-color: transparent;
+  color: var(--cx-heading);
+  border: 1.5px solid var(--cx-border);
+}
+
+.cx-btn-outline:hover {
+  border-color: var(--cx-primary);
+  color: var(--cx-primary);
+}
+
+.cx-btn-sm {
+  padding: 0.65rem 1.35rem;
+  font-size: var(--cx-fs-xs);
+}
+
+/* ---------- Focus states (accessibility) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cx-primary);
+  outline-offset: 3px;
+  border-radius: var(--cx-radius-sm);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

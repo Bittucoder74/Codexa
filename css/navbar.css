@@ -1,153 +1,146 @@
-/*====================================
-    Navbar
-====================================*/
+/* ==================================================
+   COMPONENT: NAVBAR
+   ================================================== */
 
-.cx-header{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+.cx-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--cx-navbar-height);
+  background-color: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--cx-border);
 }
 
-.cx-navbar{
-    background: var(--clr-surface);
-    border-bottom: 1px solid var(--clr-border);
-    padding: 18px 0;
-    transition: var(--transition);
+.cx-navbar-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/*====================================
-    Logo
-====================================*/
-
-.cx-logo{
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--clr-primary) !important;
-    letter-spacing: .5px;
+/* ---------- Brand ---------- */
+.cx-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-/*====================================
-    Navigation
-====================================*/
-
-.cx-nav-link{
-    color: var(--clr-heading) !important;
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 10px;
-    transition: var(--transition);
-    position: relative;
+.cx-navbar-mark {
+  display: inline-flex;
+  flex-shrink: 0;
 }
 
-.cx-nav-link:hover,
-.cx-nav-link.active{
-    color: var(--clr-primary) !important;
+.cx-navbar-wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
 }
 
-/* Underline Animation */
-
-.cx-nav-link::after{
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -5px;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--clr-primary);
-
-    transition: var(--transition);
-
+.cx-navbar-name {
+  font-family: var(--cx-font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cx-heading);
+  letter-spacing: -0.01em;
 }
 
-.cx-nav-link:hover::after,
-.cx-nav-link.active::after{
-
-    width: 100%;
-
+.cx-navbar-subname {
+  font-family: var(--cx-font-display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--cx-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-/*====================================
-    Theme Button
-====================================*/
-
-.cx-theme-btn{
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    border: 1px solid var(--clr-border);
-
-    background: var(--clr-card);
-
-    color: var(--clr-heading);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: var(--transition);
-
+/* ---------- Links + actions (desktop layout) ---------- */
+.cx-navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: var(--cx-space-lg);
 }
 
-.cx-theme-btn:hover{
-
-    background: var(--clr-primary);
-    color: #fff;
-
+.cx-navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2.25rem;
+  margin: 0;
 }
 
-/*====================================
-    Apply Button
-====================================*/
-
-.cx-btn-primary{
-
-    background: var(--clr-primary);
-    color: #fff !important;
-
-    padding: 12px 24px;
-
-    border-radius: var(--radius-md);
-
-    font-weight: 600;
-
-    transition: var(--transition);
-
+.cx-navbar-link {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.4rem;
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-sm);
+  font-weight: 600;
+  color: var(--cx-text);
+  transition: color var(--cx-transition-fast);
 }
 
-.cx-btn-primary:hover{
-
-    background: var(--clr-secondary);
-
-    color: #fff !important;
-
-    transform: translateY(-2px);
-
+.cx-navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--cx-gradient-brand);
+  border-radius: var(--cx-radius-pill);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cx-transition-fast);
 }
 
-/*====================================
-    Mobile Menu Button
-====================================*/
-
-.cx-menu-btn{
-
-    border: none;
-
-    box-shadow: none !important;
-
+.cx-navbar-link:hover,
+.cx-navbar-link.is-active {
+  color: var(--cx-heading);
 }
 
-.cx-menu-btn:focus{
+.cx-navbar-link:hover::after,
+.cx-navbar-link.is-active::after {
+  transform: scaleX(1);
+}
 
-    box-shadow: none;
+.cx-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
 
+.cx-navbar-btn-outline {
+  border-color: var(--cx-border);
+}
+
+/* ---------- Mobile toggler ---------- */
+.cx-navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--cx-radius-sm);
+  transition: background-color var(--cx-transition-fast);
+}
+
+.cx-navbar-toggler:hover {
+  background-color: var(--cx-primary-light);
+}
+
+.cx-navbar-toggler-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--cx-heading);
+  border-radius: var(--cx-radius-pill);
+  transition: transform var(--cx-transition-fast), opacity var(--cx-transition-fast);
 }
