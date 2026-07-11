@@ -1,0 +1,60 @@
+/*====================================
+    LIGHT THEME
+====================================*/
+
+:root{
+
+    /*========== Brand ==========*/
+
+    --clr-primary:#2563eb;
+    --clr-secondary:#22d3ee;
+    --clr-accent:#4f46e5;
+
+    /*========== Background ==========*/
+
+    --clr-body:#f8fafc;
+    --clr-surface:#ffffff;
+    --clr-card:#ffffff;
+
+    /*========== Text ==========*/
+
+    --clr-heading:#0f172a;
+    --clr-text:#475569;
+    --clr-muted:#64748b;
+
+    /*========== Border ==========*/
+
+    --clr-border:#e2e8f0;
+
+    /*========== Shadow ==========*/
+
+    --shadow-sm:0 2px 10px rgba(15,23,42,.06);
+    --shadow-md:0 10px 30px rgba(15,23,42,.08);
+    --shadow-lg:0 20px 45px rgba(15,23,42,.12);
+
+    /*========== Radius ==========*/
+
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:24px;
+    --radius-xl:40px;
+
+    /*========== Spacing ==========*/
+
+    --space-xs:8px;
+    --space-sm:12px;
+    --space-md:20px;
+    --space-lg:40px;
+    --space-xl:60px;
+    --space-2xl:80px;
+    --space-3xl:120px;
+
+    /*========== Font ==========*/
+
+    --font-primary:'Plus Jakarta Sans', sans-serif;
+
+    /*========== Transition ==========*/
+
+    --transition:.35s ease;
+
+}

@@ -1,0 +1,13 @@
+body.dark-theme{
+
+    --clr-body:#0b1120;
+    --clr-surface:#111827;
+    --clr-card:#1e293b;
+
+    --clr-heading:#ffffff;
+    --clr-text:#cbd5e1;
+    --clr-muted:#94a3b8;
+
+    --clr-border:#334155;
+
+}

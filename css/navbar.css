@@ -1,0 +1,153 @@
+/*====================================
+    Navbar
+====================================*/
+
+.cx-header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.cx-navbar{
+    background: var(--clr-surface);
+    border-bottom: 1px solid var(--clr-border);
+    padding: 18px 0;
+    transition: var(--transition);
+}
+
+/*====================================
+    Logo
+====================================*/
+
+.cx-logo{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--clr-primary) !important;
+    letter-spacing: .5px;
+}
+
+/*====================================
+    Navigation
+====================================*/
+
+.cx-nav-link{
+    color: var(--clr-heading) !important;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.cx-nav-link:hover,
+.cx-nav-link.active{
+    color: var(--clr-primary) !important;
+}
+
+/* Underline Animation */
+
+.cx-nav-link::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--clr-primary);
+
+    transition: var(--transition);
+
+}
+
+.cx-nav-link:hover::after,
+.cx-nav-link.active::after{
+
+    width: 100%;
+
+}
+
+/*====================================
+    Theme Button
+====================================*/
+
+.cx-theme-btn{
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--clr-border);
+
+    background: var(--clr-card);
+
+    color: var(--clr-heading);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition);
+
+}
+
+.cx-theme-btn:hover{
+
+    background: var(--clr-primary);
+    color: #fff;
+
+}
+
+/*====================================
+    Apply Button
+====================================*/
+
+.cx-btn-primary{
+
+    background: var(--clr-primary);
+    color: #fff !important;
+
+    padding: 12px 24px;
+
+    border-radius: var(--radius-md);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+.cx-btn-primary:hover{
+
+    background: var(--clr-secondary);
+
+    color: #fff !important;
+
+    transform: translateY(-2px);
+
+}
+
+/*====================================
+    Mobile Menu Button
+====================================*/
+
+.cx-menu-btn{
+
+    border: none;
+
+    box-shadow: none !important;
+
+}
+
+.cx-menu-btn:focus{
+
+    box-shadow: none;
+
+}

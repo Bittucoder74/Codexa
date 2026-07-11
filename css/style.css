@@ -1,0 +1,120 @@
+/*====================================
+    CSS Reset
+====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--font-primary);
+    background:var(--clr-body);
+    color:var(--clr-text);
+    line-height:1.6;
+    overflow-x:hidden;
+    transition:var(--transition);
+}
+
+
+/*====================================
+    Common Elements
+====================================*/
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+    border:none;
+    outline:none;
+}
+
+button{
+    cursor:pointer;
+    /*background:none;*/
+}
+
+textarea{
+    resize:none;
+}
+
+
+/*====================================
+    Typography
+====================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:var(--clr-heading);
+    font-weight:700;
+    line-height:1.2;
+}
+
+p{
+    color:var(--clr-text);
+}
+
+
+/*====================================
+    Section
+====================================*/
+
+section{
+    padding:var(--space-3xl) 0;
+}
+
+
+/*====================================
+    Selection
+====================================*/
+
+::selection{
+    background:var(--clr-primary);
+    color:#fff;
+}
+
+
+/*====================================
+    Scrollbar
+====================================*/
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--clr-body);
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--clr-primary);
+    border-radius:50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--clr-secondary);
+}
