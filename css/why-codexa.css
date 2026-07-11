@@ -1,0 +1,106 @@
+/* ==================================================
+   COMPONENT: WHY CODEXA
+   ================================================== */
+
+.cx-why-header {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--cx-space-xl);
+}
+
+.cx-why-heading {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cx-why-desc {
+  font-size: var(--cx-fs-lg);
+}
+
+/* ---------- Bento grid ---------- */
+.cx-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-auto-flow: dense;
+  gap: var(--cx-space-md);
+}
+
+.cx-why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--cx-bg-alt);
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius);
+  padding: var(--cx-space-md);
+  transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+.cx-why-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cx-shadow-md);
+}
+
+.cx-why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--cx-radius-sm);
+  background-color: var(--cx-icon-bg);
+  color: var(--cx-icon-color);
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-why-item-title {
+  font-size: var(--cx-fs-lg);
+  margin-bottom: 0.5rem;
+}
+
+.cx-why-item-desc {
+  font-size: var(--cx-fs-sm);
+  color: var(--cx-text);
+}
+
+/* ---------- Featured tile: AI Mentor ---------- */
+.cx-why-item-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  justify-content: center;
+  background-color: var(--cx-bg-dark);
+  border: none;
+  padding: var(--cx-space-lg);
+}
+
+.cx-why-icon-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--cx-secondary);
+}
+
+.cx-why-item-featured .cx-why-item-title {
+  font-size: var(--cx-fs-2xl);
+  color: #FFFFFF;
+  max-width: 420px;
+}
+
+.cx-why-item-featured .cx-why-item-desc {
+  color: var(--cx-text-on-dark);
+  max-width: 440px;
+  font-size: var(--cx-fs-base);
+}
+
+.cx-why-stat {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--cx-space-md);
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-xs);
+  font-weight: 700;
+  color: var(--cx-secondary);
+  background-color: rgba(34, 211, 238, 0.12);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--cx-radius-pill);
+}
