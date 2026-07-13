@@ -1,0 +1,79 @@
+/* ==================================================
+   COMPONENT: FAQ SECTION
+   ================================================== */
+
+.cx-faq-container {
+  max-width: 760px;
+}
+
+.cx-faq-header {
+  text-align: center;
+  margin-bottom: var(--cx-space-xl);
+}
+
+.cx-faq-heading {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cx-faq-desc {
+  font-size: var(--cx-fs-lg);
+}
+
+.cx-faq-contact-link {
+  color: var(--cx-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- List ---------- */
+.cx-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cx-faq-item {
+  border-bottom: 1px solid var(--cx-border);
+}
+
+.cx-faq-item:first-child {
+  border-top: 1px solid var(--cx-border);
+}
+
+/* ---------- Question (trigger) ---------- */
+.cx-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cx-space-md);
+  padding-block: 1.35rem;
+  text-align: left;
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-lg);
+  font-weight: 700;
+  color: var(--cx-heading);
+}
+
+.cx-faq-icon {
+  flex-shrink: 0;
+  color: var(--cx-primary);
+  transition: transform var(--cx-transition);
+}
+
+.cx-faq-question[aria-expanded="true"] .cx-faq-icon {
+  transform: rotate(45deg);
+}
+
+.cx-faq-question[aria-expanded="true"] {
+  color: var(--cx-primary);
+}
+
+/* ---------- Answer ---------- */
+.cx-faq-answer-text {
+  font-size: var(--cx-fs-base);
+  color: var(--cx-text);
+  max-width: 640px;
+  padding-bottom: 1.35rem;
+}
