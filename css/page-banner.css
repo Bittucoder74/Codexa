@@ -1,0 +1,48 @@
+/* ==================================================
+   SHARED: PAGE BANNER
+   --------------------------------------------------
+   Compact header used at the top of every inner page
+   (About, Courses, Admission, Contact, Gallery,
+   Placement, FAQ). Content differs per page; markup
+   lives in each page file, but the styling is shared
+   from here.
+   ================================================== */
+
+.cx-page-banner {
+  padding-block: var(--cx-space-2xl) var(--cx-space-xl);
+  background-color: var(--cx-primary-light);
+}
+
+.cx-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--cx-fs-xs);
+  font-weight: 600;
+  color: var(--cx-text-muted);
+  margin-bottom: var(--cx-space-md);
+}
+
+.cx-breadcrumb a {
+  color: var(--cx-text-muted);
+  transition: color var(--cx-transition-fast);
+}
+
+.cx-breadcrumb a:hover {
+  color: var(--cx-primary);
+}
+
+.cx-breadcrumb [aria-current="page"] {
+  color: var(--cx-heading);
+}
+
+.cx-page-banner-heading {
+  margin-top: 0.75rem;
+  max-width: 700px;
+}
+
+.cx-page-banner-desc {
+  font-size: var(--cx-fs-lg);
+  max-width: 620px;
+  margin-top: var(--cx-space-sm);
+}
