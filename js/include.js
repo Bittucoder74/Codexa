@@ -14,10 +14,19 @@
  * server works, e.g. `npx serve` or the VS Code
  * "Live Server" extension.
  *
- * Dispatches a "cx:include-loaded" event on each host
- * element once its partial is injected, so app.js can
- * safely wire up behavior (nav toggles, active links)
- * after the markup exists in the DOM.
+ * IMPORTANT: the host element is replaced by the fetched
+ * markup (not just filled with it via innerHTML). If the
+ * wrapper div were kept, position:sticky/fixed elements
+ * inside it (like the navbar) would be constrained to the
+ * wrapper's box — and since that box is only as tall as
+ * its content, a sticky navbar would have zero room to
+ * actually stick and would scroll away immediately.
+ * Removing the wrapper avoids that entirely.
+ *
+ * Dispatches "cx:include-loaded" on the document once a
+ * partial is injected, so app.js can safely wire up
+ * behavior (nav toggles, active links) after the markup
+ * exists in the DOM.
  * ================================================== */
 
 (function () {
@@ -34,12 +43,15 @@
       }
 
       const html = await response.text();
-      el.innerHTML = html;
+      const template = document.createElement('template');
+      template.innerHTML = html.trim();
 
-      el.dispatchEvent(new CustomEvent('cx:include-loaded', { bubbles: true }));
+      el.replaceWith(template.content);
+
+      document.dispatchEvent(new CustomEvent('cx:include-loaded', { detail: { path } }));
     } catch (error) {
       console.error('[cx-include]', error);
-      el.innerHTML = '';
+      el.remove();
     }
   }
 
