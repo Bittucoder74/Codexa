@@ -1,0 +1,115 @@
+/* ==================================================
+   ANIMATIONS
+   --------------------------------------------------
+   Two mechanisms, both minimal and restrained:
+
+   1. Scroll reveal — elements marked .cx-reveal start
+      hidden and fade/slide up once app.js's
+      IntersectionObserver adds .is-visible. Grid
+      children stagger slightly via nth-child delay so
+      cards don't all pop at once.
+
+   2. Hero load-in — the hero is above the fold, so it
+      animates on page load instead of on scroll, via
+      plain CSS animation-delay (no JS needed).
+
+   Everything here respects prefers-reduced-motion.
+   ================================================== */
+
+/* ---------- Scroll reveal ---------- */
+.cx-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--cx-ease), transform 0.6s var(--cx-ease);
+}
+
+.cx-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger grid children on the way in */
+.cx-course-grid .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-course-grid .cx-reveal:nth-child(2) { transition-delay: 0.08s; }
+.cx-course-grid .cx-reveal:nth-child(3) { transition-delay: 0.16s; }
+.cx-course-grid .cx-reveal:nth-child(4) { transition-delay: 0.24s; }
+
+.cx-why-grid .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-why-grid .cx-reveal:nth-child(2) { transition-delay: 0.08s; }
+.cx-why-grid .cx-reveal:nth-child(3) { transition-delay: 0.16s; }
+.cx-why-grid .cx-reveal:nth-child(4) { transition-delay: 0.24s; }
+.cx-why-grid .cx-reveal:nth-child(5) { transition-delay: 0.32s; }
+.cx-why-grid .cx-reveal:nth-child(6) { transition-delay: 0.4s; }
+
+.cx-process-track .cx-reveal:nth-child(2) { transition-delay: 0.08s; }
+.cx-process-track .cx-reveal:nth-child(3) { transition-delay: 0.16s; }
+.cx-process-track .cx-reveal:nth-child(4) { transition-delay: 0.24s; }
+
+.cx-project-grid .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-project-grid .cx-reveal:nth-child(2) { transition-delay: 0.1s; }
+.cx-project-grid .cx-reveal:nth-child(3) { transition-delay: 0.2s; }
+
+.cx-testimonial-grid .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-testimonial-grid .cx-reveal:nth-child(2) { transition-delay: 0.1s; }
+.cx-testimonial-grid .cx-reveal:nth-child(3) { transition-delay: 0.2s; }
+
+.cx-faq-list .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-faq-list .cx-reveal:nth-child(2) { transition-delay: 0.05s; }
+.cx-faq-list .cx-reveal:nth-child(3) { transition-delay: 0.1s; }
+.cx-faq-list .cx-reveal:nth-child(4) { transition-delay: 0.15s; }
+.cx-faq-list .cx-reveal:nth-child(5) { transition-delay: 0.2s; }
+.cx-faq-list .cx-reveal:nth-child(6) { transition-delay: 0.25s; }
+
+/* ---------- Hero load-in ---------- */
+@keyframes cxFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cx-hero-badge {
+  animation: cxFadeUp 0.6s var(--cx-ease) both;
+}
+
+.cx-hero-heading {
+  animation: cxFadeUp 0.6s var(--cx-ease) 0.08s both;
+}
+
+.cx-hero-desc {
+  animation: cxFadeUp 0.6s var(--cx-ease) 0.16s both;
+}
+
+.cx-hero-cta {
+  animation: cxFadeUp 0.6s var(--cx-ease) 0.24s both;
+}
+
+.cx-hero-pills {
+  animation: cxFadeUp 0.6s var(--cx-ease) 0.32s both;
+}
+
+.cx-hero-visual {
+  animation: cxFadeUp 0.7s var(--cx-ease) 0.2s both;
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cx-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .cx-hero-badge,
+  .cx-hero-heading,
+  .cx-hero-desc,
+  .cx-hero-cta,
+  .cx-hero-pills,
+  .cx-hero-visual {
+    animation: none;
+  }
+}
