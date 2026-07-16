@@ -49,6 +49,31 @@
     revealEls.forEach((el) => observer.observe(el));
   }
 
+  function initCourseFilters() {
+    const filterBtns = document.querySelectorAll('.cx-course-filter-btn');
+    const courseCards = document.querySelectorAll('.cx-course-card[data-category]');
+    const emptyMessage = document.querySelector('.cx-course-empty');
+
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+
+        let visibleCount = 0;
+        courseCards.forEach((card) => {
+          const isMatch = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.hidden = !isMatch;
+          if (isMatch) visibleCount += 1;
+        });
+
+        if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
+      });
+    });
+  }
+
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
+  document.addEventListener('DOMContentLoaded', initCourseFilters);
 })();

@@ -1,0 +1,46 @@
+/* ==================================================
+   PAGE: COURSES
+   --------------------------------------------------
+   Course cards deliberately reuse .cx-course-card and
+   friends from featured-courses.css instead of
+   redefining them here — same visual language, no
+   duplicate CSS.
+   ================================================== */
+
+.cx-course-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--cx-space-lg);
+}
+
+.cx-course-filter-btn {
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-sm);
+  font-weight: 600;
+  color: var(--cx-text);
+  background-color: var(--cx-bg-alt);
+  border: 1px solid var(--cx-border);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--cx-radius-pill);
+  transition: background-color var(--cx-transition-fast), color var(--cx-transition-fast), border-color var(--cx-transition-fast);
+}
+
+.cx-course-filter-btn:hover {
+  border-color: var(--cx-primary);
+  color: var(--cx-primary);
+}
+
+.cx-course-filter-btn.is-active {
+  background: var(--cx-gradient-brand);
+  border-color: transparent;
+  color: #FFFFFF;
+}
+
+/* ---------- Empty state (JS toggles this when a filter has 0 matches) ---------- */
+.cx-course-empty {
+  text-align: center;
+  font-size: var(--cx-fs-lg);
+  color: var(--cx-text-muted);
+  padding-block: var(--cx-space-xl);
+}
