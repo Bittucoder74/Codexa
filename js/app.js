@@ -73,7 +73,28 @@
     });
   }
 
+  function initAdmissionForm() {
+    const form = document.getElementById('cxAdmissionForm');
+    const successPanel = document.getElementById('cxAdmissionSuccess');
+
+    if (!form) return;
+
+    // NOTE: there is no backend wired up yet. This only validates the
+    // form and swaps in a confirmation message. Before going live,
+    // replace this with a real fetch() POST to whatever endpoint
+    // collects admission applications (form service, CRM, etc.).
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      form.hidden = true;
+      if (successPanel) successPanel.hidden = false;
+    });
+  }
+
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
   document.addEventListener('DOMContentLoaded', initCourseFilters);
+  document.addEventListener('DOMContentLoaded', initAdmissionForm);
 })();

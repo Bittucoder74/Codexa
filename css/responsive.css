@@ -486,3 +486,22 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==================================================
+   ADMISSION PAGE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-admission-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cx-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-admission-form-wrap {
+    padding: var(--cx-space-md);
+  }
+}
