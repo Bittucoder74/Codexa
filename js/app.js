@@ -73,28 +73,31 @@
     });
   }
 
-  function initAdmissionForm() {
-    const form = document.getElementById('cxAdmissionForm');
-    const successPanel = document.getElementById('cxAdmissionSuccess');
+  function initFormSuccessSwap() {
+    // Any <form data-success-target="someId"> gets wired up the same
+    // way: validate, then swap the form out for the matching success
+    // panel. Used by both the Admission and Contact forms.
+    //
+    // NOTE: there is no backend wired up yet — this only validates
+    // and shows a confirmation message. Before going live, replace
+    // the preventDefault() flow with a real fetch() POST to whatever
+    // endpoint collects submissions (form service, CRM, etc.).
+    document.querySelectorAll('form[data-success-target]').forEach((form) => {
+      const successPanel = document.getElementById(form.dataset.successTarget);
 
-    if (!form) return;
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    // NOTE: there is no backend wired up yet. This only validates the
-    // form and swaps in a confirmation message. Before going live,
-    // replace this with a real fetch() POST to whatever endpoint
-    // collects admission applications (form service, CRM, etc.).
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+        if (!form.reportValidity()) return;
 
-      if (!form.reportValidity()) return;
-
-      form.hidden = true;
-      if (successPanel) successPanel.hidden = false;
+        form.hidden = true;
+        if (successPanel) successPanel.hidden = false;
+      });
     });
   }
 
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
   document.addEventListener('DOMContentLoaded', initCourseFilters);
-  document.addEventListener('DOMContentLoaded', initAdmissionForm);
+  document.addEventListener('DOMContentLoaded', initFormSuccessSwap);
 })();

@@ -25,6 +25,7 @@
 
   <link rel="stylesheet" href="/css/navbar.css" />
   <link rel="stylesheet" href="/css/page-banner.css" />
+  <link rel="stylesheet" href="/css/forms.css" />
   <link rel="stylesheet" href="/css/admission.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/animations.css" />
@@ -62,7 +63,7 @@
         <!-- Form -->
         <div class="cx-admission-form-wrap cx-reveal">
 
-          <form class="cx-form" id="cxAdmissionForm" novalidate>
+          <form class="cx-form" id="cxAdmissionForm" data-success-target="cxAdmissionSuccess" novalidate>
 
             <div class="cx-form-row">
               <div class="cx-form-group">
@@ -132,7 +133,7 @@
               <textarea class="cx-form-input cx-form-textarea" id="cxMessage" name="message" rows="4" placeholder="What are you hoping to achieve — a career switch, your first job, a promotion?"></textarea>
             </div>
 
-            <button class="cx-btn cx-btn-primary cx-admission-submit" type="submit">Submit Application</button>
+            <button class="cx-btn cx-btn-primary cx-form-submit" type="submit">Submit Application</button>
 
             <p class="cx-form-note">By submitting, you agree to be contacted by our admission team regarding this application.</p>
 

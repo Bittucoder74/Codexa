@@ -505,3 +505,22 @@
     padding: var(--cx-space-md);
   }
 }
+
+/* ==================================================
+   CONTACT PAGE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cx-contact-form-wrap {
+    padding: var(--cx-space-md);
+  }
+
+  .cx-contact-map {
+    height: 260px;
+  }
+}

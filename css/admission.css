@@ -1,5 +1,8 @@
 /* ==================================================
    PAGE: ADMISSION
+   --------------------------------------------------
+   Generic form control styles live in forms.css; this
+   file only has what's specific to this page's layout.
    ================================================== */
 
 .cx-admission-grid {
@@ -9,146 +12,12 @@
   align-items: start;
 }
 
-/* ---------- Form ---------- */
+/* ---------- Form wrapper ---------- */
 .cx-admission-form-wrap {
   background-color: var(--cx-bg-alt);
   border: 1px solid var(--cx-border);
   border-radius: var(--cx-radius-lg);
   padding: var(--cx-space-lg);
-}
-
-.cx-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--cx-space-md);
-}
-
-.cx-form-group {
-  margin-bottom: var(--cx-space-md);
-  border: none;
-  padding: 0;
-}
-
-.cx-form-label {
-  display: block;
-  font-family: var(--cx-font-display);
-  font-size: var(--cx-fs-sm);
-  font-weight: 700;
-  color: var(--cx-heading);
-  margin-bottom: 0.5rem;
-}
-
-.cx-form-label span[aria-hidden] {
-  color: var(--cx-primary);
-}
-
-.cx-form-optional {
-  font-weight: 500;
-  color: var(--cx-text-muted);
-}
-
-.cx-form-input {
-  width: 100%;
-  font-family: var(--cx-font-body);
-  font-size: var(--cx-fs-base);
-  color: var(--cx-heading);
-  background-color: var(--cx-bg);
-  border: 1.5px solid var(--cx-border);
-  border-radius: var(--cx-radius-sm);
-  padding: 0.75rem 1rem;
-  transition: border-color var(--cx-transition-fast), box-shadow var(--cx-transition-fast);
-}
-
-.cx-form-input::placeholder {
-  color: var(--cx-text-muted);
-}
-
-.cx-form-input:focus {
-  outline: none;
-  border-color: var(--cx-primary);
-  box-shadow: 0 0 0 3px var(--cx-primary-light);
-}
-
-.cx-form-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
-}
-
-.cx-form-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-/* Radio group */
-.cx-radio-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.cx-radio {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--cx-fs-sm);
-  font-weight: 600;
-  color: var(--cx-heading);
-  background-color: var(--cx-bg);
-  border: 1.5px solid var(--cx-border);
-  padding: 0.6rem 1rem;
-  border-radius: var(--cx-radius-pill);
-  cursor: pointer;
-  transition: border-color var(--cx-transition-fast), background-color var(--cx-transition-fast);
-}
-
-.cx-radio input {
-  accent-color: var(--cx-primary);
-}
-
-.cx-radio:has(input:checked) {
-  border-color: var(--cx-primary);
-  background-color: var(--cx-primary-light);
-}
-
-.cx-admission-submit {
-  width: 100%;
-  margin-top: var(--cx-space-sm);
-}
-
-.cx-form-note {
-  font-size: var(--cx-fs-xs);
-  color: var(--cx-text-muted);
-  text-align: center;
-  margin-top: var(--cx-space-sm);
-}
-
-/* ---------- Success state ---------- */
-.cx-form-success {
-  text-align: center;
-  padding: var(--cx-space-xl) var(--cx-space-md);
-}
-
-.cx-form-success-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--cx-gradient-brand);
-  margin-bottom: var(--cx-space-md);
-}
-
-.cx-form-success-title {
-  margin-bottom: 0.5rem;
-}
-
-.cx-form-success-desc {
-  max-width: 420px;
-  margin-inline: auto;
 }
 
 /* ---------- Sidebar ---------- */
