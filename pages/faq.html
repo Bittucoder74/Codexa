@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Codexa Tech Academy</title>
+  <meta name="description" content="Answers to common questions about admission, courses, fees and placement support at Codexa Tech Academy." />
+  <meta name="theme-color" content="#2563EB" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+
+  <meta property="og:title" content="FAQ — Codexa Tech Academy" />
+  <meta property="og:description" content="Answers to common questions about admission, courses, fees and placement support at Codexa Tech Academy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.codexatechacademy.com/pages/faq.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/page-banner.css" />
+  <link rel="stylesheet" href="/css/filters.css" />
+  <!-- Reuses the homepage's accordion styles (.cx-faq-item etc.)
+       instead of redefining them for this page. -->
+  <link rel="stylesheet" href="/css/faq-section.css" />
+  <link rel="stylesheet" href="/css/cta.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+
+  <!-- Responsive overrides load last -->
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+  <a class="cx-skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <div data-cx-include="/components/navbar.html"></div>
+
+  <main id="main-content">
+
+    <!-- Page banner -->
+    <section class="cx-page-banner">
+      <div class="cx-container">
+        <nav class="cx-breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">FAQ</span>
+        </nav>
+        <span class="cx-eyebrow">FAQ</span>
+        <h1 class="cx-page-banner-heading">Answers to the questions you're probably asking</h1>
+        <p class="cx-page-banner-desc">Browse by category, or <a href="/pages/contact.html" class="cx-faq-contact-link">talk to our team</a> if you can't find what you need.</p>
+      </div>
+    </section>
+
+    <!-- Filter + accordion -->
+    <section class="cx-section cx-faq-page">
+      <div class="cx-container cx-faq-container">
+
+        <div class="cx-filter-bar" role="group" aria-label="Filter FAQs by category" data-filter-target=".cx-faq-item">
+          <button class="cx-filter-btn is-active" type="button" data-filter="all">All</button>
+          <button class="cx-filter-btn" type="button" data-filter="general">General</button>
+          <button class="cx-filter-btn" type="button" data-filter="admission">Admission</button>
+          <button class="cx-filter-btn" type="button" data-filter="courses">Courses</button>
+          <button class="cx-filter-btn" type="button" data-filter="fees">Fees &amp; Payment</button>
+          <button class="cx-filter-btn" type="button" data-filter="placement">Placement</button>
+        </div>
+
+        <div class="cx-faq-list">
+
+          <div class="cx-faq-item cx-reveal" data-category="general">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP1" aria-expanded="false" aria-controls="cxFaqP1">
+              <span>Do I need a coding background to join?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP1">
+              <p class="cx-faq-answer-text">No. Most of our courses start from the basics, and a short skill assessment during admission places you in the right batch whether you're a complete beginner or already writing code.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="general">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP2" aria-expanded="false" aria-controls="cxFaqP2">
+              <span>Are classes online, offline, or both?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP2">
+              <p class="cx-faq-answer-text">Both. You can attend live online classes from anywhere, or join in person at our campus, and switch modes between sessions if your schedule changes.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="admission">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP3" aria-expanded="false" aria-controls="cxFaqP3">
+              <span>How do I apply?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP3">
+              <p class="cx-faq-answer-text">Fill out the form on our <a href="/pages/admission.html">Admission page</a>. Our team calls you within 24 hours to walk through courses, batches and next steps.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="admission">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP4" aria-expanded="false" aria-controls="cxFaqP4">
+              <span>What documents do I need for admission?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP4">
+              <p class="cx-faq-answer-text">A valid photo ID and your highest qualification certificate. Nothing else is required to start — anything course-specific will be shared during counseling.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="admission">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP5" aria-expanded="false" aria-controls="cxFaqP5">
+              <span>Is there an entrance test?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP5">
+              <p class="cx-faq-answer-text">Not a pass/fail test — a short skill assessment that simply tells us which batch and pace suits you best.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="courses">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP6" aria-expanded="false" aria-controls="cxFaqP6">
+              <span>How long are the courses?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP6">
+              <p class="cx-faq-answer-text">Most programs run 3–7 months depending on the course — see exact durations on the <a href="/pages/courses.html">Courses page</a>.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="courses">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP7" aria-expanded="false" aria-controls="cxFaqP7">
+              <span>Will I get access to class recordings?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP7">
+              <p class="cx-faq-answer-text">Yes — every live session is recorded and stays available for the length of your course, so missing a class isn't a problem.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="fees">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP8" aria-expanded="false" aria-controls="cxFaqP8">
+              <span>What are the payment and EMI options?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP8">
+              <p class="cx-faq-answer-text">You can pay in full or in monthly installments through our EMI partners, with no-cost EMI available on select courses. Exact plans are shared during admission counselling.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="fees">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP9" aria-expanded="false" aria-controls="cxFaqP9">
+              <span>Is there a refund policy?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP9">
+              <p class="cx-faq-answer-text">Yes, within the first two weeks of a batch starting. Full terms are shared in your admission documents before you pay.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="placement">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP10" aria-expanded="false" aria-controls="cxFaqP10">
+              <span>Is placement guaranteed after the course?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP10">
+              <p class="cx-faq-answer-text">We provide 100% placement <em>support</em> — mock interviews, resume reviews, and direct introductions to hiring partners — until you're offer-ready. We don't promise a guaranteed job, since the outcome also depends on your own effort and interview performance.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="placement">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP11" aria-expanded="false" aria-controls="cxFaqP11">
+              <span>What's the average package for placed students?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP11">
+              <p class="cx-faq-answer-text">Recent batches have averaged around ₹6.2 LPA, varying by course and experience — see current numbers on the <a href="/pages/placement.html">Placements page</a>.</p>
+            </div>
+          </div>
+
+          <div class="cx-faq-item cx-reveal" data-category="placement">
+            <button class="cx-faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#cxFaqP12" aria-expanded="false" aria-controls="cxFaqP12">
+              <span>Do you help with interview preparation?</span>
+              <svg class="cx-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <div class="collapse cx-faq-answer" id="cxFaqP12">
+              <p class="cx-faq-answer-text">Yes — repeated mock interview rounds with real feedback, plus resume and portfolio reviews, are built into every course's placement track.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="cx-filter-empty" hidden>No questions in this category yet — try another category above.</p>
+
+      </div>
+    </section>
+
+    <div data-cx-include="/components/cta.html"></div>
+  </main>
+
+  <!-- Footer -->
+  <div data-cx-include="/components/footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

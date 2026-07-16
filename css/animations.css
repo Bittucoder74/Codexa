@@ -63,6 +63,7 @@
 .cx-faq-list .cx-reveal:nth-child(4) { transition-delay: 0.15s; }
 .cx-faq-list .cx-reveal:nth-child(5) { transition-delay: 0.2s; }
 .cx-faq-list .cx-reveal:nth-child(6) { transition-delay: 0.25s; }
+.cx-faq-list .cx-reveal:nth-child(n+7) { transition-delay: 0.25s; }
 
 .cx-about-stats .cx-reveal:nth-child(1) { transition-delay: 0s; }
 .cx-about-stats .cx-reveal:nth-child(2) { transition-delay: 0.08s; }
@@ -73,6 +74,18 @@
 .cx-value-grid .cx-reveal:nth-child(2) { transition-delay: 0.08s; }
 .cx-value-grid .cx-reveal:nth-child(3) { transition-delay: 0.16s; }
 .cx-value-grid .cx-reveal:nth-child(4) { transition-delay: 0.24s; }
+
+.cx-partner-grid .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-partner-grid .cx-reveal:nth-child(2) { transition-delay: 0.04s; }
+.cx-partner-grid .cx-reveal:nth-child(3) { transition-delay: 0.08s; }
+.cx-partner-grid .cx-reveal:nth-child(4) { transition-delay: 0.12s; }
+.cx-partner-grid .cx-reveal:nth-child(5) { transition-delay: 0.16s; }
+
+.cx-placement-list .cx-reveal:nth-child(1) { transition-delay: 0s; }
+.cx-placement-list .cx-reveal:nth-child(2) { transition-delay: 0.06s; }
+.cx-placement-list .cx-reveal:nth-child(3) { transition-delay: 0.12s; }
+.cx-placement-list .cx-reveal:nth-child(4) { transition-delay: 0.18s; }
+.cx-placement-list .cx-reveal:nth-child(5) { transition-delay: 0.24s; }
 
 /* ---------- Hero load-in ---------- */
 @keyframes cxFadeUp {

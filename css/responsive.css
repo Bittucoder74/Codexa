@@ -547,3 +547,32 @@
     padding: var(--cx-space-md);
   }
 }
+
+/* ==================================================
+   PLACEMENT PAGE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-placement-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cx-partner-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cx-partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cx-placement-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cx-placement-package {
+    align-self: flex-start;
+  }
+}
