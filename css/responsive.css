@@ -524,3 +524,26 @@
     height: 260px;
   }
 }
+
+/* ==================================================
+   GALLERY PAGE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cx-gallery-grid {
+    column-count: 1;
+  }
+
+  .cx-lightbox-visual {
+    height: 220px;
+  }
+
+  .cx-lightbox-info {
+    padding: var(--cx-space-md);
+  }
+}

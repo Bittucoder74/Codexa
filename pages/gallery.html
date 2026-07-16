@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Codexa Tech Academy</title>
+  <meta name="description" content="A look inside Codexa Tech Academy — campus, events, workshops, hackathons and convocation moments." />
+  <meta name="theme-color" content="#2563EB" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+
+  <meta property="og:title" content="Gallery — Codexa Tech Academy" />
+  <meta property="og:description" content="A look inside Codexa Tech Academy — campus, events, workshops, hackathons and convocation moments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.codexatechacademy.com/pages/gallery.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/page-banner.css" />
+  <link rel="stylesheet" href="/css/filters.css" />
+  <link rel="stylesheet" href="/css/gallery.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+
+  <!-- Responsive overrides load last -->
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+  <a class="cx-skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <div data-cx-include="/components/navbar.html"></div>
+
+  <main id="main-content">
+
+    <!-- Page banner -->
+    <section class="cx-page-banner">
+      <div class="cx-container">
+        <nav class="cx-breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Gallery</span>
+        </nav>
+        <span class="cx-eyebrow">Gallery</span>
+        <h1 class="cx-page-banner-heading">A look inside Codexa</h1>
+        <p class="cx-page-banner-desc">Campus life, events, workshops and the moments that come with building a career in tech.</p>
+      </div>
+    </section>
+
+    <!-- Filter + gallery -->
+    <section class="cx-section cx-gallery-section">
+      <div class="cx-container">
+
+        <div class="cx-filter-bar" role="group" aria-label="Filter gallery by category" data-filter-target=".cx-gallery-item">
+          <button class="cx-filter-btn is-active" type="button" data-filter="all">All</button>
+          <button class="cx-filter-btn" type="button" data-filter="campus">Campus</button>
+          <button class="cx-filter-btn" type="button" data-filter="events">Events</button>
+          <button class="cx-filter-btn" type="button" data-filter="workshops">Workshops</button>
+          <button class="cx-filter-btn" type="button" data-filter="hackathons">Hackathons</button>
+          <button class="cx-filter-btn" type="button" data-filter="convocation">Convocation</button>
+        </div>
+
+        <div class="cx-gallery-grid">
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="campus" data-category-label="Campus" data-title="Main Campus Lobby" data-desc="A calm, modern space where students gather between classes." data-thumb-class="cx-gallery-thumb-a" style="--cx-gallery-h: 300px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-a"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Campus</span><span class="cx-gallery-caption-title">Main Campus Lobby</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="workshops" data-category-label="Workshops" data-title="AI/ML Bootcamp" data-desc="A weekend intensive where students built their first machine learning models." data-thumb-class="cx-gallery-thumb-b" style="--cx-gallery-h: 220px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-b"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Workshops</span><span class="cx-gallery-caption-title">AI/ML Bootcamp</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="events" data-category-label="Events" data-title="Annual Tech Fest" data-desc="Students, alumni and hiring partners under one roof for a day of talks and demos." data-thumb-class="cx-gallery-thumb-c" style="--cx-gallery-h: 340px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-c"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Events</span><span class="cx-gallery-caption-title">Annual Tech Fest</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="hackathons" data-category-label="Hackathons" data-title="Codexa Hackathon 2025" data-desc="48 hours, dozens of teams, and a lot of coffee — this year's biggest hackathon." data-thumb-class="cx-gallery-thumb-d" style="--cx-gallery-h: 260px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-d"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Hackathons</span><span class="cx-gallery-caption-title">Codexa Hackathon 2025</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="campus" data-category-label="Campus" data-title="Coding Lab" data-desc="Where most of the live project work happens, batch after batch." data-thumb-class="cx-gallery-thumb-e" style="--cx-gallery-h: 240px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-e"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Campus</span><span class="cx-gallery-caption-title">Coding Lab</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="convocation" data-category-label="Convocation" data-title="Graduation Day 2025" data-desc="Celebrating the batch that started as beginners and left as hired developers." data-thumb-class="cx-gallery-thumb-f" style="--cx-gallery-h: 320px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-f"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Convocation</span><span class="cx-gallery-caption-title">Graduation Day 2025</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="workshops" data-category-label="Workshops" data-title="UI/UX Design Sprint" data-desc="A hands-on Figma sprint where students redesigned real product flows." data-thumb-class="cx-gallery-thumb-a" style="--cx-gallery-h: 260px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-a"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Workshops</span><span class="cx-gallery-caption-title">UI/UX Design Sprint</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="events" data-category-label="Events" data-title="Alumni Meet" data-desc="Former students came back to share what the first year on the job is really like." data-thumb-class="cx-gallery-thumb-c" style="--cx-gallery-h: 220px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-c"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Events</span><span class="cx-gallery-caption-title">Alumni Meet</span></span>
+          </button>
+
+          <button class="cx-gallery-item cx-reveal" type="button" data-category="campus" data-category-label="Campus" data-title="Library &amp; Study Zone" data-desc="A quiet corner for the nights before an assignment deadline." data-thumb-class="cx-gallery-thumb-e" style="--cx-gallery-h: 300px;">
+            <span class="cx-gallery-thumb cx-gallery-thumb-e"></span>
+            <span class="cx-gallery-caption"><span class="cx-gallery-caption-category">Campus</span><span class="cx-gallery-caption-title">Library &amp; Study Zone</span></span>
+          </button>
+
+        </div>
+
+        <p class="cx-filter-empty" hidden>No photos in this category yet — check back soon, or explore another category above.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div data-cx-include="/components/footer.html"></div>
+
+  <!-- Lightbox (populated via JS on click) -->
+  <div class="cx-lightbox" id="cxLightbox" hidden>
+    <div class="cx-lightbox-backdrop" data-cx-lightbox-close></div>
+    <div class="cx-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="cxLightboxTitle">
+      <button class="cx-lightbox-close" type="button" data-cx-lightbox-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+      </button>
+      <div class="cx-lightbox-visual" id="cxLightboxVisual"></div>
+      <div class="cx-lightbox-info">
+        <span class="cx-lightbox-category" id="cxLightboxCategory"></span>
+        <h2 class="cx-lightbox-title" id="cxLightboxTitle"></h2>
+        <p class="cx-lightbox-desc" id="cxLightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

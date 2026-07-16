@@ -1,0 +1,155 @@
+/* ==================================================
+   PAGE: GALLERY
+   --------------------------------------------------
+   No raster photos yet, so each tile is a CSS gradient
+   placeholder — same illustration language as the hero
+   and student-project previews. Swap the .cx-gallery-thumb
+   background for a real photo (background-image) once
+   assets/images/gallery/ has real files.
+   ================================================== */
+
+/* ---------- Masonry grid (CSS columns) ---------- */
+.cx-gallery-grid {
+  column-count: 3;
+  column-gap: var(--cx-space-md);
+}
+
+.cx-gallery-item {
+  display: block;
+  width: 100%;
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: var(--cx-space-md);
+  border-radius: var(--cx-radius);
+  overflow: hidden;
+  border: none;
+  text-align: left;
+  transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+.cx-gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cx-shadow-lg);
+}
+
+.cx-gallery-thumb {
+  display: block;
+  width: 100%;
+  height: var(--cx-gallery-h, 260px);
+}
+
+.cx-gallery-thumb-a { background: var(--cx-gradient-brand); }
+.cx-gallery-thumb-b { background: linear-gradient(135deg, #22D3EE 0%, #2563EB 100%); }
+.cx-gallery-thumb-c { background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%); }
+.cx-gallery-thumb-d { background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%); }
+.cx-gallery-thumb-e { background: linear-gradient(135deg, #10B981 0%, #0E7490 100%); }
+.cx-gallery-thumb-f { background: linear-gradient(135deg, #F472B6 0%, #FB923C 100%); }
+
+/* ---------- Caption overlay ---------- */
+.cx-gallery-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: var(--cx-space-md) var(--cx-space-sm) var(--cx-space-sm);
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0) 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--cx-transition-fast), transform var(--cx-transition-fast);
+}
+
+.cx-gallery-item:hover .cx-gallery-caption,
+.cx-gallery-item:focus-visible .cx-gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cx-gallery-caption-category {
+  font-family: var(--cx-font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cx-gallery-caption-title {
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-sm);
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ---------- Lightbox ---------- */
+.cx-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--cx-space-md);
+}
+
+.cx-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(11, 18, 32, 0.8);
+}
+
+.cx-lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 620px;
+  background-color: var(--cx-bg-alt);
+  border-radius: var(--cx-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--cx-shadow-lg);
+}
+
+.cx-lightbox-close {
+  position: absolute;
+  top: var(--cx-space-sm);
+  right: var(--cx-space-sm);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.5);
+  color: #FFFFFF;
+  transition: background-color var(--cx-transition-fast);
+}
+
+.cx-lightbox-close:hover {
+  background-color: rgba(15, 23, 42, 0.75);
+}
+
+.cx-lightbox-visual {
+  width: 100%;
+  height: 320px;
+}
+
+.cx-lightbox-info {
+  padding: var(--cx-space-lg);
+}
+
+.cx-lightbox-category {
+  display: inline-block;
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cx-primary);
+  margin-bottom: 0.5rem;
+}
+
+.cx-lightbox-title {
+  font-size: var(--cx-fs-2xl);
+  margin-bottom: 0.5rem;
+}

@@ -49,26 +49,32 @@
     revealEls.forEach((el) => observer.observe(el));
   }
 
-  function initCourseFilters() {
-    const filterBtns = document.querySelectorAll('.cx-course-filter-btn');
-    const courseCards = document.querySelectorAll('.cx-course-card[data-category]');
-    const emptyMessage = document.querySelector('.cx-course-empty');
+  function initFilterBars() {
+    // Any ".cx-filter-bar[data-filter-target]" wires up the same way:
+    // its buttons filter whatever matches the target selector by
+    // comparing each item's data-category to the button's data-filter.
+    // Used by both the Courses and Gallery pages.
+    document.querySelectorAll('.cx-filter-bar[data-filter-target]').forEach((bar) => {
+      const targetSelector = bar.dataset.filterTarget;
+      const scope = bar.parentElement || document;
+      const items = scope.querySelectorAll(targetSelector);
+      const emptyMessage = scope.querySelector('.cx-filter-empty');
+      const buttons = bar.querySelectorAll('.cx-filter-btn');
 
-    if (!filterBtns.length) return;
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+          buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
 
-    filterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-        filterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+          let visibleCount = 0;
+          items.forEach((item) => {
+            const isMatch = filter === 'all' || item.getAttribute('data-category') === filter;
+            item.hidden = !isMatch;
+            if (isMatch) visibleCount += 1;
+          });
 
-        let visibleCount = 0;
-        courseCards.forEach((card) => {
-          const isMatch = filter === 'all' || card.getAttribute('data-category') === filter;
-          card.hidden = !isMatch;
-          if (isMatch) visibleCount += 1;
+          if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
         });
-
-        if (emptyMessage) emptyMessage.hidden = visibleCount !== 0;
       });
     });
   }
@@ -96,8 +102,48 @@
     });
   }
 
+  function initGalleryLightbox() {
+    const lightbox = document.getElementById('cxLightbox');
+    if (!lightbox) return;
+
+    const visual = document.getElementById('cxLightboxVisual');
+    const categoryEl = document.getElementById('cxLightboxCategory');
+    const titleEl = document.getElementById('cxLightboxTitle');
+    const descEl = document.getElementById('cxLightboxDesc');
+    const closeTriggers = lightbox.querySelectorAll('[data-cx-lightbox-close]');
+
+    function openLightbox(item) {
+      visual.className = 'cx-lightbox-visual ' + (item.dataset.thumbClass || '');
+      categoryEl.textContent = item.dataset.categoryLabel || '';
+      titleEl.textContent = item.dataset.title || '';
+      descEl.textContent = item.dataset.desc || '';
+
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+
+      const closeBtn = lightbox.querySelector('.cx-lightbox-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.cx-gallery-item').forEach((item) => {
+      item.addEventListener('click', () => openLightbox(item));
+    });
+
+    closeTriggers.forEach((el) => el.addEventListener('click', closeLightbox));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
+  }
+
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
-  document.addEventListener('DOMContentLoaded', initCourseFilters);
+  document.addEventListener('DOMContentLoaded', initFilterBars);
   document.addEventListener('DOMContentLoaded', initFormSuccessSwap);
+  document.addEventListener('DOMContentLoaded', initGalleryLightbox);
 })();

@@ -1,20 +1,19 @@
 /* ==================================================
-   PAGE: COURSES
+   SHARED: FILTER BAR
    --------------------------------------------------
-   Course cards deliberately reuse .cx-course-card and
-   friends from featured-courses.css instead of
-   redefining them here — same visual language, no
-   duplicate CSS.
+   Generic category-filter pills, reused wherever a page
+   needs to filter a grid of cards (Courses, Gallery).
+   Wiring lives in app.js's initFilterBars().
    ================================================== */
 
-.cx-course-filters {
+.cx-filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: var(--cx-space-lg);
 }
 
-.cx-course-filter-btn {
+.cx-filter-btn {
   font-family: var(--cx-font-display);
   font-size: var(--cx-fs-sm);
   font-weight: 600;
@@ -26,19 +25,19 @@
   transition: background-color var(--cx-transition-fast), color var(--cx-transition-fast), border-color var(--cx-transition-fast);
 }
 
-.cx-course-filter-btn:hover {
+.cx-filter-btn:hover {
   border-color: var(--cx-primary);
   color: var(--cx-primary);
 }
 
-.cx-course-filter-btn.is-active {
+.cx-filter-btn.is-active {
   background: var(--cx-gradient-brand);
   border-color: transparent;
   color: #FFFFFF;
 }
 
 /* ---------- Empty state (JS toggles this when a filter has 0 matches) ---------- */
-.cx-course-empty {
+.cx-filter-empty {
   text-align: center;
   font-size: var(--cx-fs-lg);
   color: var(--cx-text-muted);

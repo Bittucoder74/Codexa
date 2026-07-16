@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/navbar.css" />
   <link rel="stylesheet" href="/css/page-banner.css" />
   <link rel="stylesheet" href="/css/featured-courses.css" />
-  <link rel="stylesheet" href="/css/courses.css" />
+  <link rel="stylesheet" href="/css/filters.css" />
   <link rel="stylesheet" href="/css/cta.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/animations.css" />
@@ -61,13 +61,13 @@
     <section class="cx-section cx-all-courses">
       <div class="cx-container">
 
-        <div class="cx-course-filters" role="group" aria-label="Filter courses by category">
-          <button class="cx-course-filter-btn is-active" type="button" data-filter="all">All Courses</button>
-          <button class="cx-course-filter-btn" type="button" data-filter="development">Development</button>
-          <button class="cx-course-filter-btn" type="button" data-filter="data-ai">Data &amp; AI</button>
-          <button class="cx-course-filter-btn" type="button" data-filter="design">Design</button>
-          <button class="cx-course-filter-btn" type="button" data-filter="backend">Backend</button>
-          <button class="cx-course-filter-btn" type="button" data-filter="marketing">Marketing</button>
+        <div class="cx-filter-bar" role="group" aria-label="Filter courses by category" data-filter-target=".cx-course-card">
+          <button class="cx-filter-btn is-active" type="button" data-filter="all">All Courses</button>
+          <button class="cx-filter-btn" type="button" data-filter="development">Development</button>
+          <button class="cx-filter-btn" type="button" data-filter="data-ai">Data &amp; AI</button>
+          <button class="cx-filter-btn" type="button" data-filter="design">Design</button>
+          <button class="cx-filter-btn" type="button" data-filter="backend">Backend</button>
+          <button class="cx-filter-btn" type="button" data-filter="marketing">Marketing</button>
         </div>
 
         <div class="cx-course-grid">
@@ -218,7 +218,7 @@
 
         </div>
 
-        <p class="cx-course-empty" hidden>No courses in this category yet — check back soon, or explore another category above.</p>
+        <p class="cx-filter-empty" hidden>No courses in this category yet — check back soon, or explore another category above.</p>
 
       </div>
     </section>
