@@ -75,4 +75,41 @@
   /* ---------- Layout ---------- */
   --cx-container-max: 1240px;
   --cx-navbar-height: 84px;
+
+  /* Tells the browser to render native controls (scrollbars,
+     form fields) in a light-appropriate style by default. */
+  color-scheme: light;
+
+  /* Translucent navbar background (used with backdrop-filter blur) */
+  --cx-navbar-bg: rgba(248, 250, 252, 0.72);
+  --cx-navbar-shadow: 0 1px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* ==================================================
+   DARK THEME
+   --------------------------------------------------
+   Toggled by setting data-theme="dark" on <html> (see
+   js/theme.js). Only surface/text tokens change — brand
+   colors (primary/secondary/accent) stay the same in
+   both themes for consistent identity.
+   ================================================== */
+[data-theme="dark"] {
+  --cx-bg: #0B1220;
+  --cx-bg-alt: #141B2E;
+  --cx-bg-dark: #05070D;
+
+  --cx-heading: #F1F5F9;
+  --cx-text: #CBD5E1;
+  --cx-text-muted: #94A3B8;
+  --cx-text-on-dark: #E2E8F0;
+
+  --cx-border: #263049;
+  --cx-border-dark: #334155;
+
+  --cx-primary-light: rgba(37, 99, 235, 0.18);
+
+  --cx-navbar-bg: rgba(11, 18, 32, 0.72);
+  --cx-navbar-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+
+  color-scheme: dark;
 }

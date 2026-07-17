@@ -35,30 +35,63 @@
       </span>
     </a>
 
-    <!-- Mobile toggler (behavior wired up in the Responsive pass) -->
-    <button class="cx-navbar-toggler navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cxNavbarMenu" aria-controls="cxNavbarMenu" aria-expanded="false" aria-label="Toggle navigation menu">
-      <span class="cx-navbar-toggler-bar"></span>
-      <span class="cx-navbar-toggler-bar"></span>
-      <span class="cx-navbar-toggler-bar"></span>
-    </button>
+    <!--
+      Everything to the right of the brand lives in one wrapper, so
+      cx-navbar-inner only ever has 2 direct children (brand, this)
+      regardless of breakpoint — keeps the space-between layout simple.
+      The theme toggle and mobile menu button sit outside the
+      collapsible menu on purpose, so switching themes never requires
+      opening the hamburger menu first.
+    -->
+    <div class="cx-navbar-right">
 
-    <div class="collapse navbar-collapse cx-navbar-collapse" id="cxNavbarMenu">
+      <div class="cx-navbar-collapse" id="cxNavbarMenu">
 
-      <!-- Primary navigation -->
-      <ul class="cx-navbar-links">
-        <li><a class="cx-navbar-link" href="/index.html">Home</a></li>
-        <li><a class="cx-navbar-link" href="/pages/about.html">About</a></li>
-        <li><a class="cx-navbar-link" href="/pages/courses.html">Courses</a></li>
-        <li><a class="cx-navbar-link" href="/pages/placement.html">Placements</a></li>
-        <li><a class="cx-navbar-link" href="/pages/gallery.html">Gallery</a></li>
-        <li><a class="cx-navbar-link" href="/pages/contact.html">Contact</a></li>
-      </ul>
+        <!-- Primary navigation -->
+        <ul class="cx-navbar-links">
+          <li><a class="cx-navbar-link" href="/index.html">Home</a></li>
+          <li><a class="cx-navbar-link" href="/pages/about.html">About</a></li>
+          <li><a class="cx-navbar-link" href="/pages/courses.html">Courses</a></li>
+          <li><a class="cx-navbar-link" href="/pages/placement.html">Placements</a></li>
+          <li><a class="cx-navbar-link" href="/pages/gallery.html">Gallery</a></li>
+          <li><a class="cx-navbar-link" href="/pages/contact.html">Contact</a></li>
+        </ul>
 
-      <!-- Actions -->
-      <div class="cx-navbar-actions">
-        <a class="cx-btn cx-btn-outline cx-btn-sm cx-navbar-btn-outline" href="/pages/faq.html">FAQ</a>
-        <a class="cx-btn cx-btn-primary cx-btn-sm cx-navbar-btn-primary" href="/pages/admission.html">Apply Now</a>
+        <!-- Actions -->
+        <div class="cx-navbar-actions">
+          <button class="cx-theme-toggle cx-theme-toggle-desktop" type="button" aria-label="Switch to dark mode">
+            <svg class="cx-theme-icon cx-theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2" />
+              <path d="M12 2V4.5M12 19.5V22M22 12H19.5M4.5 12H2M19.07 4.93L17.3 6.7M6.7 17.3L4.93 19.07M19.07 19.07L17.3 17.3M6.7 6.7L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <svg class="cx-theme-icon cx-theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.8C19.9 13.4 18.6 13.7 17.3 13.5C14.1 13.1 11.5 10.5 11.1 7.3C10.9 6 11.2 4.7 11.8 3.6C12 3.2 11.7 2.7 11.2 2.8C6.9 3.6 3.7 7.4 4 11.9C4.3 16.4 8 20 12.4 20.1C16.2 20.2 19.5 17.8 20.7 14.4C20.9 13.9 20.4 13.5 21 12.8Z" fill="currentColor" />
+            </svg>
+          </button>
+          <a class="cx-btn cx-btn-outline cx-btn-sm cx-navbar-btn-outline" href="/pages/faq.html">FAQ</a>
+          <a class="cx-btn cx-btn-primary cx-btn-sm cx-navbar-btn-primary" href="/pages/admission.html">Apply Now</a>
+        </div>
+
       </div>
+
+      <!-- Shown only below the lg breakpoint (see responsive.css) so
+           the theme can be switched without opening the menu. -->
+      <button class="cx-theme-toggle cx-theme-toggle-mobile" type="button" aria-label="Switch to dark mode">
+        <svg class="cx-theme-icon cx-theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2" />
+          <path d="M12 2V4.5M12 19.5V22M22 12H19.5M4.5 12H2M19.07 4.93L17.3 6.7M6.7 17.3L4.93 19.07M19.07 19.07L17.3 17.3M6.7 6.7L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <svg class="cx-theme-icon cx-theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.8C19.9 13.4 18.6 13.7 17.3 13.5C14.1 13.1 11.5 10.5 11.1 7.3C10.9 6 11.2 4.7 11.8 3.6C12 3.2 11.7 2.7 11.2 2.8C6.9 3.6 3.7 7.4 4 11.9C4.3 16.4 8 20 12.4 20.1C16.2 20.2 19.5 17.8 20.7 14.4C20.9 13.9 20.4 13.5 21 12.8Z" fill="currentColor" />
+        </svg>
+      </button>
+
+      <!-- Mobile toggler (behavior wired up in the Responsive pass) -->
+      <button class="cx-navbar-toggler" type="button" data-cx-menu-toggle="cxNavbarMenu" aria-controls="cxNavbarMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="cx-navbar-toggler-bar"></span>
+        <span class="cx-navbar-toggler-bar"></span>
+        <span class="cx-navbar-toggler-bar"></span>
+      </button>
 
     </div>
   </div>

@@ -151,8 +151,57 @@
     });
   }
 
+  function initMobileMenu() {
+    // Custom toggle instead of Bootstrap's collapse plugin — its
+    // height-based animation judders on this absolutely-positioned
+    // dropdown, so we drive open/close with a simple class instead
+    // (animated via opacity/transform in responsive.css).
+    const toggle = document.querySelector('[data-cx-menu-toggle]');
+    if (!toggle) return;
+
+    const menu = document.getElementById(toggle.dataset.cxMenuToggle);
+    if (!menu) return;
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.contains('is-open');
+      if (isOpen) closeMenu();
+      else openMenu();
+    });
+
+    // Close after picking a link, and when clicking anywhere outside.
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (event) => {
+      const clickedInsideMenu = menu.contains(event.target);
+      const clickedToggle = toggle.contains(event.target);
+      if (!clickedInsideMenu && !clickedToggle && menu.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+  }
+
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
+  document.addEventListener('cx:includes-ready', initMobileMenu);
   document.addEventListener('DOMContentLoaded', initFilterBars);
   document.addEventListener('DOMContentLoaded', initFormSuccessSwap);
   document.addEventListener('DOMContentLoaded', initGalleryLightbox);

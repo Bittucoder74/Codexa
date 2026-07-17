@@ -7,10 +7,11 @@
   top: 0;
   z-index: 1000;
   height: var(--cx-navbar-height);
-  background-color: rgba(248, 250, 252, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--cx-navbar-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--cx-border);
+  box-shadow: var(--cx-navbar-shadow);
 }
 
 .cx-navbar-inner {
@@ -18,6 +19,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Everything right of the brand: nav collapse + theme toggle + mobile
+   menu button. Keeping this as one wrapper means cx-navbar-inner only
+   ever has 2 children, so the space-between above works identically
+   at every breakpoint. */
+.cx-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-space-md);
+  flex: 1;
+  justify-content: flex-end;
 }
 
 /* ---------- Brand ---------- */
@@ -119,9 +132,47 @@
   border-color: var(--cx-border);
 }
 
+/* ---------- Theme toggle ---------- */
+.cx-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--cx-border);
+  background-color: var(--cx-bg-alt);
+  color: var(--cx-text);
+  transition: background-color var(--cx-transition-fast), border-color var(--cx-transition-fast), color var(--cx-transition-fast), transform var(--cx-transition-fast);
+}
+
+.cx-theme-toggle:hover {
+  border-color: var(--cx-primary);
+  color: var(--cx-primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile copy hidden on desktop; shown instead via responsive.css below lg */
+.cx-theme-toggle-mobile {
+  display: none;
+}
+
+.cx-theme-icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .cx-theme-icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .cx-theme-icon-moon {
+  display: block;
+}
+
 /* ---------- Mobile toggler ---------- */
 .cx-navbar-toggler {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

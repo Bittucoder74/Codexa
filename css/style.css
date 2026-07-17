@@ -24,6 +24,7 @@ body {
   background-color: var(--cx-bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {

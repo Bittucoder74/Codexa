@@ -54,6 +54,10 @@
     height: 72px;
   }
 
+  .cx-navbar-toggler {
+    display: flex;
+  }
+
   .cx-navbar-collapse {
     position: absolute;
     top: 72px;
@@ -68,6 +72,19 @@
     gap: var(--cx-space-md);
     max-height: calc(100vh - 72px);
     overflow-y: auto;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.22s var(--cx-ease), transform 0.22s var(--cx-ease), visibility 0.22s;
+  }
+
+  .cx-navbar-collapse.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .cx-navbar-links {
@@ -110,6 +127,14 @@
 
   .cx-navbar-subname {
     display: none;
+  }
+
+  .cx-theme-toggle-desktop {
+    display: none;
+  }
+
+  .cx-theme-toggle-mobile {
+    display: inline-flex;
   }
 }
 
