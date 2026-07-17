@@ -10,12 +10,22 @@
 (function () {
   'use strict';
 
+  function normalizePagePath(path) {
+    // Handles two cases that both need to resolve to the same thing:
+    //   "/pages/gallery.html" -> "gallery.html"
+    //   "/pages/gallery"      -> "gallery.html"  (clean URLs, e.g. `npx serve`)
+    //   "/" or ""             -> "index.html"
+    let page = path.split('/').pop() || 'index.html';
+    if (!page.includes('.')) page += '.html';
+    return page;
+  }
+
   function setActiveNavLink() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = normalizePagePath(window.location.pathname);
     const navLinks = document.querySelectorAll('.cx-navbar-link');
 
     navLinks.forEach((link) => {
-      const linkPath = link.getAttribute('href').split('/').pop();
+      const linkPath = normalizePagePath(link.getAttribute('href'));
       link.classList.toggle('is-active', linkPath === currentPath);
     });
   }

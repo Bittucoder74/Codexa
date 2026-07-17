@@ -79,11 +79,22 @@
 
   .cx-navbar-link {
     width: 100%;
-    padding-block: 0.6rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--cx-radius-sm);
   }
 
   .cx-navbar-link::after {
     display: none;
+  }
+
+  .cx-navbar-link.is-active {
+    color: var(--cx-primary);
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.14) 0%, rgba(79, 70, 229, 0.08) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
   }
 
   .cx-navbar-actions {
