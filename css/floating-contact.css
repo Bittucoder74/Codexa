@@ -37,13 +37,30 @@
   background: var(--cx-gradient-brand);
 }
 
+/* ---------- Scroll to top ---------- */
+.cx-scroll-top {
+  background-color: var(--cx-heading);
+  border: none;
+  color: var(--cx-bg);
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  pointer-events: none;
+  transition: opacity var(--cx-transition-fast), transform var(--cx-transition-fast), box-shadow var(--cx-transition-fast);
+}
+
+.cx-scroll-top.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
 /* ---------- Tooltip (desktop hover only — harmless on touch, just never shown) ---------- */
 .cx-floating-tooltip {
   position: absolute;
   right: calc(100% + 0.75rem);
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--cx-heading);
+  background-color: var(--cx-bg-dark);
   color: #FFFFFF;
   font-family: var(--cx-font-display);
   font-size: var(--cx-fs-xs);

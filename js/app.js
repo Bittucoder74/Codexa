@@ -199,9 +199,28 @@
     });
   }
 
+  function initScrollToTop() {
+    const btn = document.getElementById('cxScrollTop');
+    if (!btn) return;
+
+    const SHOW_AFTER_PX = 400;
+
+    function toggleVisibility() {
+      btn.classList.toggle('is-visible', window.scrollY > SHOW_AFTER_PX);
+    }
+
+    toggleVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   document.addEventListener('cx:includes-ready', setActiveNavLink);
   document.addEventListener('cx:includes-ready', initScrollReveal);
   document.addEventListener('cx:includes-ready', initMobileMenu);
+  document.addEventListener('cx:includes-ready', initScrollToTop);
   document.addEventListener('DOMContentLoaded', initFilterBars);
   document.addEventListener('DOMContentLoaded', initFormSuccessSwap);
   document.addEventListener('DOMContentLoaded', initGalleryLightbox);
