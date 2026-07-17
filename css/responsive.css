@@ -612,3 +612,23 @@
     align-self: flex-start;
   }
 }
+
+/* ==================================================
+   FLOATING CONTACT
+   ================================================== */
+@media (max-width: 575.98px) {
+  .cx-floating-contact {
+    right: var(--cx-space-sm);
+    bottom: var(--cx-space-sm);
+    gap: 0.6rem;
+  }
+
+  .cx-floating-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cx-floating-tooltip {
+    display: none;
+  }
+}
