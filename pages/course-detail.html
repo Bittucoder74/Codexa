@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Details — Codexa Tech Academy</title>
+  <meta name="description" content="Full course details, curriculum and FAQs for this Codexa Tech Academy program." />
+  <meta name="theme-color" content="#2563EB" />
+  <meta name="robots" content="noindex, follow" />
+  <!--
+    noindex: this single template renders every course at the same
+    URL pattern (?course=id), and query-string variants like this are
+    unreliable for search indexing anyway since crawlers may not
+    execute the JS that fills in the content. Once each course has
+    real enough content to justify its own indexed page, this is the
+    place to switch to static per-course pages instead (see build.js
+    for the flattening approach used elsewhere).
+  -->
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+
+  <!-- Applies saved/preferred theme before paint to avoid a flash of the wrong theme -->
+  <script src="/js/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/page-banner.css" />
+  <link rel="stylesheet" href="/css/faq-section.css" />
+  <link rel="stylesheet" href="/css/course-detail.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/floating-contact.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+
+  <!-- Responsive overrides load last -->
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+  <a class="cx-skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <div data-cx-include="/components/navbar.html"></div>
+
+  <main id="main-content">
+
+    <!-- Filled in by js/course-detail.js once it reads ?course= from the URL -->
+    <div id="cxCourseNotFound" class="cx-course-not-found" hidden>
+      <div class="cx-container">
+        <p class="cx-eyebrow">Course Not Found</p>
+        <h1>We couldn't find that course</h1>
+        <p>It may have been renamed or moved. Browse all courses instead.</p>
+        <a class="cx-btn cx-btn-primary" href="/pages/courses.html">Browse Courses</a>
+      </div>
+    </div>
+
+    <div id="cxCourseContent" hidden>
+
+      <!-- Course hero -->
+      <section class="cx-course-hero">
+        <div class="cx-container">
+          <nav class="cx-breadcrumb" aria-label="Breadcrumb">
+            <a href="/index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/pages/courses.html">Courses</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" id="cxCourseBreadcrumb"></span>
+          </nav>
+
+          <div class="cx-course-hero-grid">
+            <div class="cx-course-hero-visual">
+              <span class="cx-course-hero-thumb" id="cxCourseThumb"></span>
+            </div>
+
+            <div class="cx-course-hero-content">
+              <h1 class="cx-course-hero-title" id="cxCourseTagline"></h1>
+
+              <div class="cx-course-hero-badges">
+                <span class="cx-course-badge" id="cxCourseDuration"></span>
+                <span class="cx-course-badge cx-course-badge-price" id="cxCoursePrice"></span>
+              </div>
+
+              <p class="cx-course-hero-desc" id="cxCourseDescription"></p>
+
+              <h2 class="cx-course-highlights-title">Course Highlights</h2>
+              <ul class="cx-course-highlights" id="cxCourseHighlights"></ul>
+
+              <div class="cx-course-hero-actions">
+                <a class="cx-btn cx-course-btn-call" id="cxCourseCallBtn" href="tel:+919876543210">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3H9L11 8L8.5 9.5C9.5 11.7 11.3 13.5 13.5 14.5L15 12L20 14V17C20 18.1 19.1 19 18 19C10.3 19 4 12.7 4 5C4 3.9 4.9 3 6 3Z" fill="currentColor" /></svg>
+                  Call to Enquire
+                </a>
+                <a class="cx-btn cx-course-btn-whatsapp" id="cxCourseWhatsappBtn" href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12C2 13.9 2.5 15.6 3.4 17.1L2 22L7.1 20.7C8.5 21.5 10.2 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" stroke="currentColor" stroke-width="0" fill="currentColor" /></svg>
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What you'll learn -->
+      <section class="cx-section cx-course-curriculum">
+        <div class="cx-container cx-course-curriculum-inner">
+          <h2 class="cx-course-section-heading">What You'll <span class="cx-course-heading-accent">Learn</span></h2>
+          <div class="cx-faq-list" id="cxCourseModules"></div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="cx-section cx-course-faqs">
+        <div class="cx-container cx-course-curriculum-inner">
+          <h2 class="cx-course-section-heading">Frequently Asked <span class="cx-course-heading-accent">Questions</span></h2>
+          <div class="cx-faq-list" id="cxCourseFaqList"></div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <section class="cx-course-enroll">
+        <div class="cx-container cx-course-enroll-inner">
+          <a class="cx-btn cx-course-btn-enroll" id="cxCourseEnrollBtn" href="tel:+919876543210">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3H9L11 8L8.5 9.5C9.5 11.7 11.3 13.5 13.5 14.5L15 12L20 14V17C20 18.1 19.1 19 18 19C10.3 19 4 12.7 4 5C4 3.9 4.9 3 6 3Z" fill="currentColor" /></svg>
+            Call to Enroll Now
+          </a>
+          <p class="cx-course-enroll-note">Prefer a written application? <a href="/pages/admission.html">Apply online instead</a>.</p>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <div data-cx-include="/components/footer.html"></div>
+
+  <!-- Floating WhatsApp + Call buttons -->
+  <div data-cx-include="/components/floating-contact.html"></div>
+
+  <!-- Scripts -->
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/courses-data.js"></script>
+  <script src="/js/course-detail.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

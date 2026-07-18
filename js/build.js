@@ -40,6 +40,12 @@ const DIST = path.join(ROOT, 'dist');
 const COPY_DIRS = ['css', 'js', 'assets'];
 const COPY_FILES = ['robots.txt', 'sitemap.xml'];
 const HTML_ENTRY_FILES = ['index.html', '404.html', ...listHtmlFiles(path.join(ROOT, 'pages')).map((f) => path.join('pages', f))];
+// Note: course-detail.html is included above since it lives under
+// /pages/ — its navbar/footer get flattened same as any other page,
+// but the actual course content still renders client-side from
+// courses-data.js based on the ?course= URL parameter at request
+// time, since that can't be known at build time without generating
+// a separate file per course.
 
 function listHtmlFiles(dir) {
   if (!fs.existsSync(dir)) return [];

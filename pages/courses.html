@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="/css/page-banner.css" />
   <link rel="stylesheet" href="/css/featured-courses.css" />
   <link rel="stylesheet" href="/css/filters.css" />
+  <link rel="stylesheet" href="/css/course-carousel.css" />
   <link rel="stylesheet" href="/css/cta.css" />
   <link rel="stylesheet" href="/css/footer.css" />
   <link rel="stylesheet" href="/css/floating-contact.css" />
@@ -97,7 +98,8 @@
           <button class="cx-filter-btn" type="button" data-filter="marketing">Marketing</button>
         </div>
 
-        <div class="cx-course-grid">
+        <div class="cx-course-carousel">
+          <div class="cx-course-carousel-track cx-course-grid" id="cxCourseTrack">
 
           <article class="cx-course-card cx-reveal" data-category="development">
             <span class="cx-course-icon" style="--cx-icon-bg: var(--cx-primary-light); --cx-icon-color: var(--cx-primary);">
@@ -111,7 +113,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner to Advanced</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=full-stack">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -129,7 +131,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Intermediate</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=mobile-app">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -147,7 +149,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner to Advanced</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=data-science">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -165,7 +167,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Intermediate</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=cloud-devops">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -183,7 +185,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner Friendly</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=ui-ux">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -201,7 +203,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner to Advanced</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=python-django">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -219,7 +221,7 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner to Advanced</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=java-spring">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
@@ -237,13 +239,16 @@
               <span class="cx-course-meta-dot" aria-hidden="true"></span>
               <span>Beginner Friendly</span>
             </div>
-            <a class="cx-course-link" href="/pages/admission.html">
+            <a class="cx-course-link" href="/pages/course-detail.html?course=digital-marketing">
               Explore Course
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             </a>
           </article>
 
         </div>
+        </div>
+
+        <div class="cx-carousel-dots" id="cxCarouselDots"></div>
 
         <p class="cx-filter-empty" hidden>No courses in this category yet — check back soon, or explore another category above.</p>
 

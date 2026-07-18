@@ -1,0 +1,59 @@
+/* ==================================================
+   COMPONENT: COURSE CAROUSEL
+   --------------------------------------------------
+   Default ("All Courses"): a sliding window of cards
+   that auto-advances, with bullet dots below.
+   When a category filter is active: switches to a
+   plain wrapping row of just the matching cards — a
+   sliding carousel of 1-3 filtered cards wouldn't make
+   sense, so filtering pauses/replaces it instead.
+   ================================================== */
+
+.cx-course-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.cx-course-carousel-track {
+  --cx-cards-per-view: 4;
+  display: flex;
+  gap: var(--cx-space-md);
+  transition: transform 0.6s var(--cx-ease);
+}
+
+.cx-course-carousel-track > .cx-course-card {
+  flex: 0 0 calc((100% - (var(--cx-cards-per-view) - 1) * var(--cx-space-md)) / var(--cx-cards-per-view));
+}
+
+.cx-course-carousel-track.is-filtered {
+  flex-wrap: wrap;
+  transform: none !important;
+}
+
+/* ---------- Bullet dots ---------- */
+.cx-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--cx-space-lg);
+}
+
+.cx-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--cx-border);
+  transition: background-color var(--cx-transition-fast), width var(--cx-transition-fast);
+}
+
+.cx-carousel-dot:hover {
+  background-color: var(--cx-primary-light);
+}
+
+.cx-carousel-dot.is-active {
+  width: 22px;
+  border-radius: var(--cx-radius-pill);
+  background: var(--cx-gradient-brand);
+}
