@@ -186,6 +186,14 @@
     right: 32%;
   }
 
+  .cx-float-figma{
+    right: 68px;
+  }
+
+   .cx-float-ai{
+    left: 68px;
+  }
+
   /* Shrink the dashboard's internals in step with the laptop's width,
      otherwise fixed-size content forces extra height and the laptop
      looks stretched/elongated instead of scaling proportionally. */
@@ -238,7 +246,7 @@
   .cx-float-figma,
   .cx-float-laravel,
   .cx-float-php {
-    display: none;
+    display: block;
   }
 }
 
@@ -301,7 +309,16 @@
 
   .cx-float-css,
   .cx-float-js {
-    display: none;
+    display: block;
+  }
+
+    .cx-float-figma{
+    right: 50px;
+  }
+
+   .cx-float-ai{
+    display: block;
+    left: 50px;
   }
 }
 
@@ -324,6 +341,20 @@
   }
 
   .cx-float-ai {
+    display: block;
+    left: 36px;
+  }
+
+   .cx-float-figma{
+    right: 36px;
+  }
+
+  .cx-float-js {
+    display: block;
+    top: -34px;
+  }
+
+  .cx-float-css {
     display: none;
   }
 }

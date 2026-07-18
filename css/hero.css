@@ -329,6 +329,7 @@
 .cx-float-laravel{ bottom: -5%; right: 18%; }
 .cx-float-php    { bottom: -4%; left: 12%; }
 .cx-float-ai     { top: 50%;  left: -11%; }
+.cx-float-wordpress { bottom: -11%;   }
 
 @keyframes cxFloat {
   0%, 100% { transform: translateY(0); }
