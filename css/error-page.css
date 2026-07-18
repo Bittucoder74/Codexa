@@ -1,0 +1,61 @@
+/* ==================================================
+   PAGE: 404 / NOT FOUND
+   ================================================== */
+
+.cx-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-block: var(--cx-space-2xl);
+  text-align: center;
+}
+
+.cx-error-inner {
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.cx-error-code {
+  font-family: var(--cx-font-display);
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--cx-gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-error-heading {
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-error-desc {
+  font-size: var(--cx-fs-lg);
+  margin-bottom: var(--cx-space-lg);
+}
+
+.cx-error-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 575.98px) {
+  .cx-error-code {
+    font-size: 4rem;
+  }
+
+  .cx-error-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cx-error-actions .cx-btn {
+    width: 100%;
+  }
+}

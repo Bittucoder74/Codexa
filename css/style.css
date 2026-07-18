@@ -142,7 +142,7 @@ p {
 /* ---------- Skip link (accessibility) ---------- */
 .cx-skip-link {
   position: absolute;
-  top: -48px;
+  top: 0;
   left: var(--cx-space-md);
   z-index: 2000;
   background-color: var(--cx-heading);
@@ -152,11 +152,17 @@ p {
   font-weight: 600;
   padding: 0.75rem 1.25rem;
   border-radius: var(--cx-radius-sm);
-  transition: top var(--cx-transition-fast);
+  /* Moves up by exactly its own rendered height, so it's always fully
+     off-screen regardless of font-size/line-height/padding — a fixed
+     pixel offset (e.g. top: -48px) can end up smaller than the
+     element's actual height and peek into view. */
+  transform: translateY(-150%);
+  transition: transform var(--cx-transition-fast);
 }
 
 .cx-skip-link:focus {
   top: var(--cx-space-md);
+  transform: translateY(0);
 }
 
 /* ---------- Focus states (accessibility) ---------- */

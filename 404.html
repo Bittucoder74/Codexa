@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Codexa Tech Academy</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Head back to Codexa Tech Academy's homepage or browse our courses." />
+  <meta name="theme-color" content="#2563EB" />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+
+  <!-- Applies saved/preferred theme before paint to avoid a flash of the wrong theme -->
+  <script src="/js/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/error-page.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/floating-contact.css" />
+
+  <!-- Responsive overrides load last -->
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+  <a class="cx-skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <div data-cx-include="/components/navbar.html"></div>
+
+  <main id="main-content">
+    <section class="cx-error">
+      <div class="cx-container cx-error-inner">
+        <div class="cx-error-code">404</div>
+        <h1 class="cx-error-heading">Looks like this page skipped class</h1>
+        <p class="cx-error-desc">The page you're looking for doesn't exist, may have moved, or the link might be broken. Let's get you back on track.</p>
+        <div class="cx-error-actions">
+          <a class="cx-btn cx-btn-primary" href="/index.html">Back to Home</a>
+          <a class="cx-btn cx-btn-outline" href="/pages/courses.html">Browse Courses</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div data-cx-include="/components/footer.html"></div>
+
+  <!-- Floating WhatsApp + Call buttons -->
+  <div data-cx-include="/components/floating-contact.html"></div>
+
+  <!-- Scripts -->
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

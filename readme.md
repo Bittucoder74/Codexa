@@ -8,7 +8,19 @@ Marketing website for Codexa Tech Academy, an AI-powered IT training institute. 
 - Vanilla JavaScript (no jQuery, no framework)
 - Google Fonts: Plus Jakarta Sans (headings) + Inter (body)
 
-## Running Locally
+## Deploying (Production Build)
+
+For development, every page loads its navbar/footer/etc. via `fetch()` at runtime — that's why the raw HTML of `index.html` looks mostly empty (just `<div data-cx-include="...">` placeholders). That's fine for editing, but it means search engines and link-preview bots that don't run JavaScript (most social media crawlers) would see a blank page.
+
+Before deploying, run:
+
+```bash
+node build.js
+```
+
+This "flattens" every component include into real static HTML and writes the result to `/dist` — upload the contents of that folder to your host. Re-run it any time you edit a component and are ready to redeploy.
+
+## Running Locally (Development)
 
 The site loads shared components (navbar, footer, CTA, etc.) via `fetch()`, which browsers block on `file://` URLs. You need a static server:
 
@@ -79,3 +91,4 @@ All design tokens live in `css/variables.css` as CSS custom properties (`--cx-pr
 - **Placeholder content throughout** — student names, stats, company logos, testimonials, and contact details are all placeholders. Replace with real data before launch.
 - **`og:image` / `twitter:image`** are intentionally omitted until a real 1200×630 share image exists — add one and reference it in each page's `<head>`.
 - Content and copy involving placement should stay in "support," not "guarantee," language — see the FAQ page's placement answer for the intended tone.
+- **Remember to run `node build.js` before deploying** — see "Deploying" above. Forgetting this means search engines and social previews see empty placeholder `<div>`s instead of real content.
