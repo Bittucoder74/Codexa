@@ -19,6 +19,22 @@
   display: flex;
   gap: var(--cx-space-md);
   transition: transform 0.6s var(--cx-ease);
+  cursor: grab;
+}
+
+.cx-course-carousel-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.cx-course-carousel-track.is-dragging * {
+  pointer-events: none;
+}
+
+/* Used on the homepage's 4-card Featured Courses, where showing all
+   4 at once would leave nothing to rotate through. */
+.cx-course-carousel-track.cx-course-carousel-compact {
+  --cx-cards-per-view: 3;
 }
 
 .cx-course-carousel-track > .cx-course-card {
@@ -28,6 +44,7 @@
 .cx-course-carousel-track.is-filtered {
   flex-wrap: wrap;
   transform: none !important;
+  cursor: default;
 }
 
 /* ---------- Bullet dots ---------- */

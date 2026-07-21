@@ -125,10 +125,6 @@
     width: 100%;
   }
 
-  .cx-navbar-subname {
-    display: none;
-  }
-
   .cx-theme-toggle-desktop {
     display: none;
   }
@@ -637,13 +633,15 @@
    COURSE CAROUSEL
    ================================================== */
 @media (max-width: 991.98px) {
-  .cx-course-carousel-track {
+  .cx-course-carousel-track,
+  .cx-course-carousel-track.cx-course-carousel-compact {
     --cx-cards-per-view: 2;
   }
 }
 
 @media (max-width: 575.98px) {
-  .cx-course-carousel-track {
+  .cx-course-carousel-track,
+  .cx-course-carousel-track.cx-course-carousel-compact {
     --cx-cards-per-view: 1;
   }
 }

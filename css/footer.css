@@ -19,15 +19,13 @@
 .cx-footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
   margin-bottom: var(--cx-space-sm);
 }
 
-.cx-footer-wordmark {
-  font-family: var(--cx-font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #FFFFFF;
+.cx-footer-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .cx-footer-tagline {

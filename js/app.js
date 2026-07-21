@@ -219,7 +219,8 @@
 
   function initCourseCarousel() {
     const track = document.getElementById('cxCourseTrack');
-    if (!track) return;
+    if (!track || track.dataset.carouselInit) return;
+    track.dataset.carouselInit = 'true';
 
     const cards = Array.from(track.children);
     const dotsContainer = document.getElementById('cxCarouselDots');
@@ -316,6 +317,99 @@
       if (!isFiltered) startTimer();
     });
 
+    // ---------- Drag / swipe (mouse + touch, via Pointer Events) ----------
+    // Nothing carousel-related happens until real movement is detected —
+    // that way a plain click/tap on a card's link is completely
+    // unaffected and always works normally.
+    let isPointerDown = false;
+    let isDragging = false;
+    let pointerDownX = 0;
+    let pointerDownTranslate = 0;
+
+    function currentTranslatePx() {
+      return -currentIndex * getStepPx();
+    }
+
+    function onPointerDown(event) {
+      if (isFiltered) return;
+      isPointerDown = true;
+      isDragging = false;
+      pointerDownX = event.clientX;
+      pointerDownTranslate = currentTranslatePx();
+      stopTimer();
+      window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointerup', onPointerUp);
+      window.addEventListener('pointercancel', onPointerCancel);
+    }
+
+    function onPointerMove(event) {
+      if (!isPointerDown) return;
+      const deltaX = event.clientX - pointerDownX;
+
+      if (!isDragging && Math.abs(deltaX) > 6) {
+        isDragging = true;
+        track.style.transition = 'none';
+        track.classList.add('is-dragging');
+      }
+
+      if (isDragging) {
+        track.style.transform = `translateX(${pointerDownTranslate + deltaX}px)`;
+      }
+    }
+
+    function onPointerUp(event) {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerCancel);
+
+      if (!isDragging) {
+        // Plain click/tap — nothing was changed, so nothing to undo.
+        if (!isFiltered) startTimer();
+        return;
+      }
+
+      track.classList.remove('is-dragging');
+      track.style.transition = '';
+
+      const deltaX = event.clientX - pointerDownX;
+      const stepPx = getStepPx();
+
+      if (Math.abs(deltaX) > stepPx * 0.15) {
+        goTo(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
+      } else {
+        goTo(currentIndex);
+      }
+
+      isDragging = false;
+      if (!isFiltered) startTimer();
+
+      // A real drag ended over a link/card — swallow the click so it
+      // doesn't also navigate.
+      const suppressClick = (clickEvent) => {
+        clickEvent.preventDefault();
+        clickEvent.stopPropagation();
+      };
+      track.addEventListener('click', suppressClick, { capture: true, once: true });
+    }
+
+    function onPointerCancel() {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      isDragging = false;
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerCancel);
+      track.classList.remove('is-dragging');
+      track.style.transition = '';
+      goTo(currentIndex);
+      if (!isFiltered) startTimer();
+    }
+
+    track.style.touchAction = 'pan-y';
+    track.addEventListener('pointerdown', onPointerDown);
+
     window.addEventListener('resize', () => {
       if (isFiltered) return;
       buildDots();
@@ -331,6 +425,7 @@
   document.addEventListener('cx:includes-ready', initScrollReveal);
   document.addEventListener('cx:includes-ready', initMobileMenu);
   document.addEventListener('cx:includes-ready', initScrollToTop);
+  document.addEventListener('cx:includes-ready', initCourseCarousel);
   document.addEventListener('DOMContentLoaded', initFilterBars);
   document.addEventListener('DOMContentLoaded', initFormSuccessSwap);
   document.addEventListener('DOMContentLoaded', initGalleryLightbox);

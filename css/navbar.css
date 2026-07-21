@@ -37,35 +37,24 @@
 .cx-navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
-.cx-navbar-mark {
-  display: inline-flex;
-  flex-shrink: 0;
+.cx-logo-img {
+  display: block;
+  height: 44px;
+  width: auto;
 }
 
-.cx-navbar-wordmark {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
+.cx-logo-dark {
+  display: none;
 }
 
-.cx-navbar-name {
-  font-family: var(--cx-font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--cx-heading);
-  letter-spacing: -0.01em;
+[data-theme="dark"] .cx-logo-light {
+  display: none;
 }
 
-.cx-navbar-subname {
-  font-family: var(--cx-font-display);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--cx-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+[data-theme="dark"] .cx-logo-dark {
+  display: block;
 }
 
 /* ---------- Links + actions (desktop layout) ---------- */
