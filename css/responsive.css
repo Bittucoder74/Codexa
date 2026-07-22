@@ -645,3 +645,46 @@
     --cx-cards-per-view: 1;
   }
 }
+
+/* ==================================================
+   COURSE DETAIL PAGE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-course-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--cx-space-lg);
+  }
+
+  .cx-course-hero-visual {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .cx-course-hero-title {
+    font-size: var(--cx-fs-3xl);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cx-course-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-course-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cx-course-hero-actions .cx-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cx-course-module-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-course-hero-title {
+    font-size: var(--cx-fs-2xl);
+  }
+}

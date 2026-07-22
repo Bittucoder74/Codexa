@@ -8,7 +8,10 @@
  * avoids a flash of the wrong theme on load.
  *
  * Preference order: saved choice in localStorage, then
- * the OS-level prefers-color-scheme, then light.
+ * light by default. First-time visitors always land on
+ * light mode regardless of their device's OS-level dark
+ * mode setting — dark mode is opt-in only, via the
+ * toggle button, and is remembered after that.
  * ================================================== */
 
 (function () {
@@ -19,7 +22,7 @@
   function getPreferredTheme() {
     var stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'dark' || stored === 'light') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   }
 
   function applyTheme(theme) {
