@@ -24,8 +24,9 @@
 
 .cx-footer-logo-img {
   display: block;
-  height: 40px;
+  height: 56px;
   width: auto;
+  max-width: 200px;
 }
 
 .cx-footer-tagline {
