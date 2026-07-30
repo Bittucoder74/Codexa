@@ -231,10 +231,20 @@
   /* Tablet: laptop is already smaller, so thin the badge set out now
      rather than waiting for mobile — otherwise they scatter too far
      from the laptop's edges. */
-  .cx-float-figma,
+  
   .cx-float-laravel,
   .cx-float-php {
-    display: none;
+    display: block;
+  }
+
+  .cx-float-ai{
+    display: block;
+    left: 7%;
+  }
+
+  .cx-float-figma{
+    display: block;
+    right: 7%;
   }
 }
 
@@ -297,8 +307,19 @@
 
   .cx-float-css,
   .cx-float-js {
-    display: none;
+    display: block;
   }
+
+  .cx-float-ai{
+    display: block;
+    top: 48%;
+    left: 14%;
+  }
+
+  .cx-float-figma{
+    right: 9%;
+  }
+
 }
 
 @media (max-width: 575.98px) {
@@ -320,6 +341,22 @@
   }
 
   .cx-float-ai {
+    display: block;
+    left: 4%;
+  }
+
+  .cx-float-figma {
+    display: block;
+    right: 3%;
+  }
+
+  
+  .cx-float-js {
+    display: block;
+    right: 34%;
+    top: -8%;
+  }
+  .cx-float-css{
     display: none;
   }
 }
@@ -463,10 +500,28 @@
   .cx-footer-top {
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--cx-space-lg);
+    text-align: center;
   }
 
   .cx-footer-brand {
     grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cx-footer-social {
+    justify-content: center;
+  }
+
+  .cx-footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cx-footer-contact {
+    align-items: center;
   }
 }
 
@@ -481,8 +536,9 @@
 
   .cx-footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
+    text-align: center;
   }
 }
 
