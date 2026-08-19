@@ -7,263 +7,263 @@
  * cards and carousel; course-detail.html reads the full
  * object (by ?course=<id> in the URL) to render one
  * page that works for every course.
+ *
+ * These are the 7 real courses launching now. See
+ * CX_COMING_SOON below for the 3 courses in progress
+ * that intentionally do NOT have a detail page yet —
+ * don't add them here until the trainer is actually
+ * ready to teach them (see README "Honesty" note).
  * ================================================== */
 
 const CX_COURSES = [
   {
+    id: 'web-design',
+    category: 'development',
+    categoryLabel: 'Development',
+    title: 'AI-Powered Web Design & Development',
+    tagline: 'Build and ship real websites',
+    duration: '5 Months',
+    level: 'Beginner Friendly',
+    price: '₹8,000',
+    marketPrice: '₹15,000–₹30,000',
+    thumbClass: 'cx-course-visual-a',
+    description: "Learn to build and ship real, live websites — from HTML/CSS fundamentals through Bootstrap, Tailwind, WordPress and modern AI-assisted workflows. Every project is hosted and deployed, not just handed in.",
+    highlights: [
+      'HTML5, CSS3 & Modern JavaScript (ES6+)',
+      'Bootstrap, Tailwind & GSAP Animation',
+      'WordPress & Elementor',
+      'Git, GitHub & Deployment',
+      'ChatGPT, Claude AI & GitHub Copilot in your workflow',
+      'Certificate upon completion'
+    ],
+    modules: [
+      { title: 'Module 1: Foundation', topics: ['HTML5 & Semantic Markup', 'CSS3 & Responsive Design', 'Modern JavaScript (ES6+)', 'Git & Version Control'] },
+      { title: 'Module 2: Frameworks & Styling', topics: ['Bootstrap & Tailwind CSS', 'GSAP Animation', 'Component-based layout', 'Responsive design systems'] },
+      { title: 'Module 3: WordPress & CMS', topics: ['WordPress fundamentals', 'Elementor page building', 'Custom themes', 'Client-ready sites'] },
+      { title: 'Module 4: AI Tools & Deployment', topics: ['ChatGPT & Claude for development', 'GitHub Copilot', 'Netlify / Vercel deployment', 'Portfolio & landing page projects'] }
+    ],
+    faqs: [
+      { q: 'Do I need prior coding experience?', a: 'No — the course starts from HTML/CSS fundamentals and builds up. A short conversation during admission helps place you in the right batch.' },
+      { q: 'What projects will I build?', a: "Portfolio, business, restaurant and landing page projects — all live and hosted by the end of the course." },
+      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews and honest guidance are part of every batch. We support your job search; we don\u2019t promise a guaranteed job.' }
+    ]
+  },
+  {
+    id: 'ms-office',
+    category: 'office',
+    categoryLabel: 'Office & Excel',
+    title: 'MS Office with AI',
+    tagline: 'The most useful, most underrated office skill',
+    duration: '2.5 Months',
+    level: 'Beginner Friendly',
+    price: '₹2,500',
+    marketPrice: '₹3,000–₹6,000',
+    thumbClass: 'cx-course-visual-b',
+    description: "A practical, foundation-first course in Word, Excel and PowerPoint, plus how to actually use AI tools like ChatGPT and Copilot to work faster — the single most useful skill for almost any office job.",
+    highlights: [
+      'Computer & Internet Fundamentals',
+      'MS Word, Excel & PowerPoint',
+      'Professional Documents & Presentations',
+      'Google Workspace & Canva',
+      'ChatGPT, Copilot, Gemini & Gamma.app',
+      'Certificate upon completion'
+    ],
+    modules: [
+      { title: 'Module 1: Fundamentals', topics: ['Computer & internet basics', 'File management', 'Typing & productivity habits', 'Introduction to AI tools'] },
+      { title: 'Module 2: MS Word & Documents', topics: ['Professional formatting', 'Templates & mail merge', 'Business documents', 'AI-assisted writing'] },
+      { title: 'Module 3: MS PowerPoint', topics: ['Presentation design', 'Gamma.app & Canva', 'Storytelling with slides', 'Client-ready decks'] },
+      { title: 'Module 4: Workspace & AI', topics: ['Google Workspace', 'Copilot & Gemini in daily work', 'Digital workspace setup', 'Final project'] }
+    ],
+    faqs: [
+      { q: 'Is this course useful if I already know basic computers?', a: 'Yes — the AI tools and professional-document modules go well beyond typical basic-computer courses.' },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
+    ]
+  },
+  {
+    id: 'advanced-excel',
+    category: 'office',
+    categoryLabel: 'Office & Excel',
+    title: 'Advanced Excel with AI',
+    tagline: 'Turn raw data into business decisions',
+    duration: '3.5 Months',
+    level: 'Beginner Friendly',
+    price: '₹4,500',
+    marketPrice: '₹5,000–₹10,000',
+    thumbClass: 'cx-course-visual-c',
+    description: "Go from core formulas to XLOOKUP, Pivot Tables, Power Query, Power Pivot and VBA/Macros — with Copilot in Excel and ChatGPT integrated into how you actually build reports and dashboards.",
+    highlights: [
+      'Core Formulas & Cell Referencing',
+      'XLOOKUP & INDEX-MATCH',
+      'Pivot Tables & Dashboards',
+      'Power Query & Power Pivot',
+      'VBA / Macros',
+      'Copilot in Excel & ChatGPT'
+    ],
+    modules: [
+      { title: 'Module 1: Foundations', topics: ['Core formulas & formatting', 'Cell referencing', 'Data cleaning', 'Excel shortcuts'] },
+      { title: 'Module 2: Lookups & Analysis', topics: ['XLOOKUP & INDEX-MATCH', 'Conditional logic', 'Data validation', 'What-if analysis'] },
+      { title: 'Module 3: Pivot Tables & Power Tools', topics: ['Pivot Tables & Dashboards', 'Power Query', 'Power Pivot', 'Data modeling'] },
+      { title: 'Module 4: Automation & AI', topics: ['VBA / Macros', 'Copilot in Excel', 'Automated business dashboard', 'Live reporting workbook project'] }
+    ],
+    faqs: [
+      { q: 'Do I need to know basic Excel first?', a: 'Basic familiarity helps, but core formulas are refreshed at the start of the course before moving into advanced topics.' },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
+    ]
+  },
+  {
+    id: 'backend-development',
+    category: 'backend',
+    categoryLabel: 'Backend',
+    title: 'AI Backend Development',
+    tagline: 'Power the systems behind every app',
+    duration: '5 Months',
+    level: 'Beginner to Advanced',
+    price: '₹9,000',
+    marketPrice: '₹20,000–₹35,000',
+    thumbClass: 'cx-course-visual-d',
+    description: "Learn PHP, SQL and MySQL fundamentals through to Laravel and Node.js/Express — building real REST APIs with authentication, using ChatGPT, Supabase and Cursor AI as part of the actual workflow.",
+    highlights: [
+      'PHP, SQL & MySQL Fundamentals',
+      'Laravel Framework',
+      'Node.js & Express',
+      'REST API Design & Authentication',
+      'Git, GitHub & Postman',
+      'ChatGPT, Supabase & Cursor AI'
+    ],
+    modules: [
+      { title: 'Module 1: Foundations', topics: ['PHP fundamentals', 'SQL & MySQL', 'Database design basics', 'Git & GitHub'] },
+      { title: 'Module 2: Laravel', topics: ['Laravel project structure', 'Routing & controllers', 'Eloquent ORM', 'Authentication'] },
+      { title: 'Module 3: Node.js & Express', topics: ['Node.js fundamentals', 'Express routing & middleware', 'REST API design', 'Postman testing'] },
+      { title: 'Module 4: Real Systems', topics: ['Authentication & authorization', 'ChatGPT & Cursor AI in backend work', 'Supabase', 'Capstone REST API project'] }
+    ],
+    faqs: [
+      { q: 'Do I need prior programming experience?', a: 'No — PHP and SQL fundamentals are taught from the ground up before moving into frameworks.' },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
+    ]
+  },
+  {
+    id: 'ui-ux-design',
+    category: 'design',
+    categoryLabel: 'Design',
+    title: 'AI UI/UX Design',
+    tagline: 'Design products people actually enjoy using',
+    duration: '6 Months',
+    level: 'Beginner Friendly',
+    price: '₹10,000',
+    marketPrice: '₹25,000–₹42,000',
+    thumbClass: 'cx-course-visual-e',
+    description: "Learn Figma, design systems and real user research to design products people can actually use — not just admire. Finish with 2–3 complete portfolio case studies, with Figma AI and Uizard woven into the process.",
+    highlights: [
+      'UX Research, User Flow & Personas',
+      'Figma from Scratch',
+      'UI Design, Typography & Color Theory',
+      'Design Systems & Prototyping',
+      'Photoshop, Illustrator, Miro & FigJam',
+      'Figma AI, Uizard & Framer AI'
+    ],
+    modules: [
+      { title: 'Module 1: Design Foundations', topics: ['Design principles', 'Color & typography', 'Figma basics', 'Layout & grids'] },
+      { title: 'Module 2: UX Research', topics: ['User research methods', 'Personas & journey maps', 'Information architecture', 'Wireframing'] },
+      { title: 'Module 3: UI & Prototyping', topics: ['Design systems', 'High-fidelity UI', 'Interactive prototyping', 'Usability testing'] },
+      { title: 'Module 4: Portfolio & AI Tools', topics: ['Figma AI & Uizard/Framer AI', 'Case study writing', 'Portfolio website', 'Mock interviews'] }
+    ],
+    faqs: [
+      { q: 'Do I need drawing or art skills?', a: "No — UI/UX design is about problem-solving and structure, not illustration." },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
+    ]
+  },
+  {
     id: 'full-stack',
     category: 'development',
     categoryLabel: 'Development',
-    title: 'Full Stack Web Development',
-    tagline: 'Become a job-ready Full Stack Developer',
-    duration: '6 Months',
+    title: 'AI Full Stack Web Development',
+    tagline: 'Frontend, backend and database, end to end',
+    duration: '7 Months (Intensive, 4 days/week)',
     level: 'Beginner to Advanced',
-    price: '₹15,999',
+    price: '₹15,000',
+    marketPrice: '₹50,000–₹65,000',
     thumbClass: 'cx-course-visual-a',
-    description: "Master full stack web development with a comprehensive, project-based program covering HTML, CSS, JavaScript, React and Node.js. Go from static pages to deployed, database-backed applications, with live projects and mentor code reviews the whole way.",
+    description: "An intensive, end-to-end program covering HTML/CSS/JS through PHP, SQL, Laravel, WordPress and MySQL, finishing in a deployed capstone application. Runs 4 days a week.",
     highlights: [
-      'HTML5, CSS3 & Modern JavaScript',
-      'React.js for Frontend Development',
-      'Node.js & Express for Backend APIs',
-      'MongoDB Database Integration',
-      'Git, Deployment & Live Projects',
-      'Certificate upon completion'
+      'HTML, CSS, JavaScript & Bootstrap',
+      'PHP, SQL, Laravel & MySQL',
+      'WordPress',
+      'Git, GitHub & Deployment',
+      'ChatGPT & Claude AI throughout',
+      'Capstone full-stack application'
     ],
     modules: [
-      { title: 'Module 1: Web Fundamentals', topics: ['HTML5 & Semantic Markup', 'CSS3 & Responsive Design', 'JavaScript Basics & DOM', 'Git & Version Control'] },
-      { title: 'Module 2: Frontend with React', topics: ['React Components & Props', 'State & Hooks', 'Routing & API Integration', 'Frontend Project'] },
-      { title: 'Module 3: Backend with Node.js', topics: ['Node.js & Express Basics', 'REST API Design', 'Authentication & Middleware', 'MongoDB & Mongoose'] },
-      { title: 'Module 4: Deployment & Capstone', topics: ['Testing & Debugging', 'Deployment (Render/Vercel)', 'Capstone Project', 'Portfolio & Resume Prep'] }
+      { title: 'Module 1: Frontend Foundations', topics: ['HTML5, CSS3 & Bootstrap', 'Modern JavaScript', 'Responsive design', 'Git & GitHub'] },
+      { title: 'Module 2: Backend Foundations', topics: ['PHP fundamentals', 'SQL & MySQL', 'Laravel basics', 'REST APIs'] },
+      { title: 'Module 3: CMS & Integration', topics: ['WordPress', 'Connecting frontend & backend', 'Authentication', 'Deployment workflows'] },
+      { title: 'Module 4: Capstone', topics: ['ChatGPT & Claude AI in the workflow', 'End-to-end capstone build', 'Testing & deployment', 'Portfolio & resume prep'] }
     ],
     faqs: [
-      { q: 'Do I need prior coding experience?', a: 'No — the course starts from HTML/CSS fundamentals and builds up. A short assessment during admission places you in the right batch.' },
-      { q: 'Is this course online or offline?', a: 'Both. Join live online classes from anywhere, or attend in person at our campus.' },
-      { q: 'What projects will I build?', a: "You'll build several projects, ending with a full-stack capstone application you deploy live and add to your portfolio." },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'mobile-app',
-    category: 'development',
-    categoryLabel: 'Development',
-    title: 'Mobile App Development',
-    tagline: 'Ship real Android & iOS apps with React Native',
-    duration: '5 Months',
-    level: 'Intermediate',
-    price: '₹14,999',
-    thumbClass: 'cx-course-visual-b',
-    description: "Build and ship cross-platform mobile apps using React Native, from one shared codebase. Learn navigation, native device features, state management and how to publish to app stores.",
-    highlights: [
-      'React Native Fundamentals',
-      'Navigation & State Management',
-      'Native Device Features (Camera, GPS)',
-      'API Integration & Local Storage',
-      'App Store & Play Store Publishing',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: React Native Basics', topics: ['JSX & Core Components', 'Styling & Layout (Flexbox)', 'Navigation Basics', 'Debugging Tools'] },
-      { title: 'Module 2: App Logic', topics: ['State Management', 'API Integration', 'Local Storage', 'Forms & Validation'] },
-      { title: 'Module 3: Native Features', topics: ['Camera & Media', 'Location & Maps', 'Push Notifications', 'Permissions Handling'] },
-      { title: 'Module 4: Publishing', topics: ['Testing on Real Devices', 'Performance Optimization', 'App Store Submission', 'Capstone Project'] }
-    ],
-    faqs: [
-      { q: 'Do I need to know React first?', a: 'Basic JavaScript knowledge helps, but React fundamentals are covered before we get into React Native.' },
-      { q: 'Will I build apps for both Android and iOS?', a: 'Yes — React Native lets you build for both platforms from a single codebase.' },
-      { q: 'Do I need a Mac to build iOS apps?', a: "We'll guide you through the options, including cloud build services that don't require a Mac." },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'data-science',
-    category: 'data-ai',
-    categoryLabel: 'Data & AI',
-    title: 'Data Science & AI',
-    tagline: 'Turn data into decisions with Python & ML',
-    duration: '7 Months',
-    level: 'Beginner to Advanced',
-    price: '₹18,999',
-    thumbClass: 'cx-course-visual-c',
-    description: "Learn Python, statistics, and machine learning through real datasets and real business questions. Build models, visualize insights, and finish with a portfolio of data science projects.",
-    highlights: [
-      'Python for Data Analysis',
-      'Statistics & Probability',
-      'Machine Learning Fundamentals',
-      'Data Visualization (Pandas, Matplotlib)',
-      'Real Datasets & Case Studies',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: Python & Statistics', topics: ['Python for Data Analysis', 'NumPy & Pandas', 'Statistics & Probability', 'Data Cleaning'] },
-      { title: 'Module 2: Data Visualization', topics: ['Matplotlib & Seaborn', 'Exploratory Data Analysis', 'Dashboards', 'Storytelling with Data'] },
-      { title: 'Module 3: Machine Learning', topics: ['Supervised Learning', 'Model Evaluation', 'Unsupervised Learning', 'Intro to Neural Networks'] },
-      { title: 'Module 4: Capstone', topics: ['End-to-End ML Project', 'Model Deployment Basics', 'Case Studies', 'Portfolio & Resume Prep'] }
-    ],
-    faqs: [
-      { q: 'Do I need a math background?', a: "Basic math helps, but statistics and the math you need are taught from the ground up in the course itself." },
-      { q: 'What tools will I learn?', a: 'Python, Pandas, NumPy, Matplotlib/Seaborn, and core machine learning libraries like scikit-learn.' },
-      { q: 'Will I work with real data?', a: 'Yes — every module uses real or realistic datasets, ending in a full case-study project.' },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'cloud-devops',
-    category: 'data-ai',
-    categoryLabel: 'Data & AI',
-    title: 'Cloud & DevOps',
-    tagline: 'Deploy and scale like real engineering teams',
-    duration: '5 Months',
-    level: 'Intermediate',
-    price: '₹16,999',
-    thumbClass: 'cx-course-visual-d',
-    description: "Learn AWS, Docker, and CI/CD pipelines to deploy and scale real applications. Understand infrastructure-as-code and the workflows modern engineering teams use every day.",
-    highlights: [
-      'AWS Core Services',
-      'Docker & Containerization',
-      'CI/CD Pipelines',
-      'Infrastructure as Code',
-      'Monitoring & Logging',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: Cloud Fundamentals', topics: ['AWS Core Services', 'Networking Basics', 'IAM & Security', 'Cloud Cost Management'] },
-      { title: 'Module 2: Containers', topics: ['Docker Fundamentals', 'Docker Compose', 'Container Registries', 'Container Best Practices'] },
-      { title: 'Module 3: CI/CD', topics: ['Git Workflows', 'Build Pipelines', 'Automated Testing', 'Deployment Strategies'] },
-      { title: 'Module 4: Production Readiness', topics: ['Infrastructure as Code', 'Monitoring & Logging', 'Scaling Applications', 'Capstone Project'] }
-    ],
-    faqs: [
-      { q: 'Do I need prior cloud experience?', a: 'Some familiarity with the command line and basic networking helps, but AWS and Docker are taught from scratch.' },
-      { q: 'Which cloud provider is covered?', a: "The course focuses on AWS, the most widely used platform, with concepts that transfer to other providers too." },
-      { q: 'Is this course hands-on?', a: 'Yes — you deploy real applications throughout, not just watch demos.' },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'ui-ux',
-    category: 'design',
-    categoryLabel: 'Design',
-    title: 'UI/UX Design',
-    tagline: 'Design products people actually enjoy using',
-    duration: '4 Months',
-    level: 'Beginner Friendly',
-    price: '₹11,999',
-    thumbClass: 'cx-course-visual-e',
-    description: "Learn Figma, design systems, and user research to design products people can actually use, not just admire. Finish with a polished portfolio of real design case studies.",
-    highlights: [
-      'Figma from Scratch',
-      'Design Systems & Components',
-      'User Research & Wireframing',
-      'Prototyping & Usability Testing',
-      'Portfolio Case Studies',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: Design Foundations', topics: ['Design Principles', 'Color & Typography', 'Figma Basics', 'Layout & Grids'] },
-      { title: 'Module 2: UX Research', topics: ['User Research Methods', 'Personas & Journey Maps', 'Information Architecture', 'Wireframing'] },
-      { title: 'Module 3: UI & Prototyping', topics: ['Design Systems', 'High-Fidelity UI', 'Interactive Prototyping', 'Usability Testing'] },
-      { title: 'Module 4: Portfolio', topics: ['Case Study Writing', 'Portfolio Website', 'Design Critique', 'Mock Interviews'] }
-    ],
-    faqs: [
-      { q: 'Do I need drawing or art skills?', a: "No — UI/UX design is about problem-solving and structure, not illustration. No art background needed." },
-      { q: 'Which tool will I learn?', a: 'Figma — the industry-standard design tool used by most product teams today.' },
-      { q: 'Will I have real portfolio pieces?', a: 'Yes — you finish with 2-3 complete case studies ready to show employers.' },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'python-django',
-    category: 'backend',
-    categoryLabel: 'Backend',
-    title: 'Python & Django Development',
-    tagline: 'Build the backend skills every team hires for',
-    duration: '5 Months',
-    level: 'Beginner to Advanced',
-    price: '₹13,999',
-    thumbClass: 'cx-course-visual-f',
-    description: "Learn server-side logic, REST APIs and databases with Python and Django. Build and deploy real backend systems that power web and mobile applications.",
-    highlights: [
-      'Python Programming Fundamentals',
-      'Django Framework & ORM',
-      'REST API Development',
-      'Database Design (PostgreSQL)',
-      'Authentication & Deployment',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: Python Fundamentals', topics: ['Python Basics', 'OOP in Python', 'File Handling', 'Working with Libraries'] },
-      { title: 'Module 2: Django Basics', topics: ['Django Project Structure', 'Models & ORM', 'Views & Templates', 'Django Admin'] },
-      { title: 'Module 3: REST APIs', topics: ['Django REST Framework', 'Authentication', 'API Design Best Practices', 'Testing APIs'] },
-      { title: 'Module 4: Deployment', topics: ['PostgreSQL Integration', 'Deployment & Hosting', 'Capstone Project', 'Portfolio & Resume Prep'] }
-    ],
-    faqs: [
-      { q: 'Do I need prior programming experience?', a: 'No — Python is taught from the basics before moving into Django.' },
-      { q: 'What will I be able to build after this course?', a: 'Full backend systems with REST APIs, databases, and authentication — ready to connect to any frontend.' },
-      { q: 'Is Django still in demand?', a: "Yes — it's widely used by startups and enterprises alike for fast, reliable backend development." },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
-    ]
-  },
-  {
-    id: 'java-spring',
-    category: 'backend',
-    categoryLabel: 'Backend',
-    title: 'Java & Spring Boot Development',
-    tagline: 'From OOP fundamentals to enterprise APIs',
-    duration: '6 Months',
-    level: 'Beginner to Advanced',
-    price: '₹15,999',
-    thumbClass: 'cx-course-visual-a',
-    description: "Go from object-oriented fundamentals to enterprise-grade Spring Boot APIs and microservices. Learn the Java stack used by large-scale, high-reliability systems.",
-    highlights: [
-      'Core Java & OOP',
-      'Spring Boot Framework',
-      'REST APIs & Microservices',
-      'Database Integration (JPA/Hibernate)',
-      'Testing & Deployment',
-      'Certificate upon completion'
-    ],
-    modules: [
-      { title: 'Module 1: Core Java', topics: ['Java Syntax & OOP', 'Collections Framework', 'Exception Handling', 'Multithreading Basics'] },
-      { title: 'Module 2: Spring Fundamentals', topics: ['Spring Boot Basics', 'Dependency Injection', 'Spring MVC', 'Configuration & Profiles'] },
-      { title: 'Module 3: APIs & Data', topics: ['REST API Development', 'JPA & Hibernate', 'Database Design', 'Validation & Error Handling'] },
-      { title: 'Module 4: Production Systems', topics: ['Microservices Basics', 'Testing with JUnit', 'Deployment', 'Capstone Project'] }
-    ],
-    faqs: [
-      { q: 'Do I need prior programming experience?', a: 'Basic programming logic helps, but Java is taught from fundamentals before Spring Boot.' },
-      { q: 'Is Java still relevant for jobs?', a: "Yes — it remains one of the most widely used languages in enterprise and backend systems." },
-      { q: 'Will I learn microservices?', a: 'Yes — the later modules introduce microservices architecture using Spring Boot.' },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
+      { q: 'Why is this course intensive?', a: 'It runs 4 days a week instead of the usual 3, to cover frontend, backend and deployment in 7 months instead of closer to 9–10.' },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
     ]
   },
   {
     id: 'digital-marketing',
     category: 'marketing',
     categoryLabel: 'Marketing',
-    title: 'Digital Marketing',
-    tagline: 'Grow an audience and prove it with numbers',
-    duration: '3 Months',
+    title: 'AI Digital Marketing & SEO',
+    tagline: 'Get brands found, followed and sold',
+    duration: '4 Months',
     level: 'Beginner Friendly',
-    price: '₹9,999',
-    thumbClass: 'cx-course-visual-b',
-    description: "Learn SEO, paid ads, analytics and content strategy to grow an audience and measure real results. A practical, tool-first course for marketers who want to work with data.",
+    price: '₹7,000',
+    marketPrice: '₹15,000–₹30,000',
+    thumbClass: 'cx-course-visual-f',
+    description: "SEO, paid ads, social media marketing and analytics, taught by our dedicated Digital Marketing faculty — kept as a specialist-taught course rather than stretched across a generalist trainer.",
     highlights: [
-      'SEO Fundamentals',
-      'Paid Ads (Google & Meta)',
-      'Content Strategy',
-      'Analytics & Reporting',
+      'SEO Fundamentals & Content Marketing',
+      'Google Ads & Meta Ads',
       'Social Media Marketing',
-      'Certificate upon completion'
+      'Analytics & Reporting',
+      'ChatGPT, Canva AI, Jasper AI & Gemini',
+      'Taught by our dedicated Digital Marketing faculty'
     ],
     modules: [
-      { title: 'Module 1: Marketing Foundations', topics: ['Digital Marketing Overview', 'Audience Research', 'Content Strategy', 'Brand Positioning'] },
-      { title: 'Module 2: SEO', topics: ['On-Page & Off-Page SEO', 'Keyword Research', 'Technical SEO Basics', 'SEO Tools'] },
-      { title: 'Module 3: Paid Advertising', topics: ['Google Ads', 'Meta Ads', 'Campaign Optimization', 'Budgeting & Bidding'] },
-      { title: 'Module 4: Analytics', topics: ['Google Analytics', 'Reporting & Dashboards', 'A/B Testing', 'Capstone Campaign'] }
+      { title: 'Module 1: Marketing Foundations', topics: ['Digital marketing overview', 'Audience research', 'Content strategy', 'Brand positioning'] },
+      { title: 'Module 2: SEO', topics: ['On-page & off-page SEO', 'Keyword research', 'Technical SEO basics', 'SEO tools'] },
+      { title: 'Module 3: Paid Advertising', topics: ['Google Ads', 'Meta Ads', 'Campaign optimization', 'Budgeting & bidding'] },
+      { title: 'Module 4: Analytics & AI Tools', topics: ['Analytics & reporting', 'ChatGPT, Canva AI & Jasper AI', 'A/B testing', 'Live ad campaign & SEO audit project'] }
     ],
     faqs: [
-      { q: 'Do I need a marketing background?', a: "No — this course is beginner-friendly and starts from the fundamentals." },
-      { q: 'Will I run real ad campaigns?', a: "Yes — you'll plan and analyze real (small-budget) campaigns as part of the course." },
-      { q: 'Can I freelance after this course?', a: 'Many students do — the skills covered are directly applicable to freelance and in-house marketing roles.' },
-      { q: 'Will I get placement support?', a: 'Yes — mock interviews, resume reviews, and introductions to hiring partners are part of every batch.' }
+      { q: 'Who teaches this course?', a: 'A dedicated Digital Marketing faculty member — kept separate from our generalist trainer so it\u2019s taught by a specialist.' },
+      { q: 'Will I get placement support?', a: 'Yes — resume guidance and interview prep are part of the course. We support your job search; we don\u2019t promise a guaranteed job.' }
     ]
+  }
+];
+
+/**
+ * ==================================================
+ * COMING SOON — NOT YET OPEN FOR ADMISSION
+ * --------------------------------------------------
+ * These courses are intentionally excluded from
+ * CX_COURSES (no detail page yet) because our trainer
+ * is still building full confidence in them. Listing
+ * them here as "Coming Soon" only — see the Courses
+ * page for how these render (no "Explore Course" link,
+ * no fee, no fixed launch date).
+ * ================================================== */
+const CX_COMING_SOON = [
+  {
+    id: 'react-development',
+    categoryLabel: 'Development',
+    title: 'AI React Development',
+    desc: 'Modern frontend framework — React, Next.js, Redux Toolkit.'
+  },
+  {
+    id: 'data-analytics',
+    categoryLabel: 'Data & Analytics',
+    title: 'AI Data Analytics',
+    desc: 'SQL, Python basics, Power BI, dashboards & reporting.'
+  },
+  {
+    id: 'python-automation',
+    categoryLabel: 'Backend',
+    title: 'AI Python Programming & Automation',
+    desc: 'Python, APIs, automation scripts, FastAPI.'
   }
 ];
