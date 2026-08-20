@@ -153,10 +153,7 @@
 }
 
 .cx-course-heading-accent {
-  background: var(--cx-gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #114EC6;
 }
 
 .cx-course-module-list {

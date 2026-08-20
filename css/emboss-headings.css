@@ -1,0 +1,53 @@
+/* ==================================================
+   EMBOSSED HEADINGS
+   --------------------------------------------------
+   Shared 3D/neumorphic text-shadow treatment for
+   section headings across the site. Loaded last so it
+   wins over each component's own CSS without editing
+   every component file individually.
+
+   Two groups:
+   - Group A: headings on light backgrounds (dark text)
+   - Group B: headings on dark/colored backgrounds
+     (white text) — e.g. the CTA banner
+   ================================================== */
+
+.cx-about-story-heading,
+.cx-about-values-heading,
+.cx-course-heading,
+.cx-course-section-heading,
+.cx-courses-heading,
+.cx-faq-heading,
+.cx-hero-heading,
+.cx-page-banner-heading,
+.cx-process-heading,
+.cx-projects-heading,
+.cx-recent-placements-heading,
+.cx-testimonials-heading {
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.8),
+    -1px -1px 1px rgba(163, 177, 198, 0.35);
+}
+
+[data-theme="dark"] .cx-about-story-heading,
+[data-theme="dark"] .cx-about-values-heading,
+[data-theme="dark"] .cx-course-heading,
+[data-theme="dark"] .cx-course-section-heading,
+[data-theme="dark"] .cx-courses-heading,
+[data-theme="dark"] .cx-faq-heading,
+[data-theme="dark"] .cx-hero-heading,
+[data-theme="dark"] .cx-page-banner-heading,
+[data-theme="dark"] .cx-process-heading,
+[data-theme="dark"] .cx-projects-heading,
+[data-theme="dark"] .cx-recent-placements-heading,
+[data-theme="dark"] .cx-testimonials-heading {
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.06),
+    -1px -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.cx-cta-heading {
+  text-shadow:
+    0.75px 0.75px 1px rgba(0, 0, 0, 0.45),
+    -0.75px -0.75px 1px rgba(255, 255, 255, 0.15);
+}

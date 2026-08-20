@@ -12,6 +12,15 @@
 .cx-why-heading {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.8),
+    -1px -1px 1px rgba(163, 177, 198, 0.35);
+}
+
+[data-theme="dark"] .cx-why-heading {
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.06),
+    -1px -1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .cx-why-desc {
@@ -32,15 +41,32 @@
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius);
+  border: none;
+  border-radius: 16px;
   padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
   transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+[data-theme="dark"] .cx-why-item {
+  box-shadow:
+    6px 6px 14px rgba(0, 0, 0, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.03);
 }
 
 .cx-why-item:hover {
   transform: translateY(-4px);
-  box-shadow: var(--cx-shadow-md);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .cx-why-item:hover {
+  box-shadow:
+    9px 9px 18px rgba(0, 0, 0, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.04);
 }
 
 .cx-why-icon {
@@ -49,15 +75,27 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: var(--cx-radius-sm);
+  border-radius: 12px;
   background-color: var(--cx-icon-bg);
   color: var(--cx-icon-color);
   margin-bottom: var(--cx-space-sm);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .cx-why-item-title {
   font-size: var(--cx-fs-lg);
   margin-bottom: 0.5rem;
+  text-shadow:
+    0.75px 0.75px 1px rgba(255, 255, 255, 0.8),
+    -0.75px -0.75px 1px rgba(163, 177, 198, 0.3);
+}
+
+[data-theme="dark"] .cx-why-item-title {
+  text-shadow:
+    0.75px 0.75px 1px rgba(255, 255, 255, 0.05),
+    -0.75px -0.75px 1px rgba(0, 0, 0, 0.5);
 }
 
 .cx-why-item-desc {
@@ -84,6 +122,9 @@
   font-size: var(--cx-fs-2xl);
   color: #FFFFFF;
   max-width: 420px;
+  text-shadow:
+    0.75px 0.75px 1px rgba(0, 0, 0, 0.5),
+    -0.75px -0.75px 1px rgba(255, 255, 255, 0.12);
 }
 
 .cx-why-item-featured .cx-why-item-desc {
