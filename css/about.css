@@ -34,15 +34,20 @@
   flex-direction: column;
   gap: 0.35rem;
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius);
+  border: none;
+  border-radius: 16px;
   padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
   transition: transform var(--cx-transition), box-shadow var(--cx-transition);
 }
 
 .cx-about-stat:hover {
   transform: translateY(-4px);
-  box-shadow: var(--cx-shadow-md);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
 }
 
 .cx-about-stat-number {
@@ -81,15 +86,20 @@
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius);
+  border: none;
+  border-radius: 16px;
   padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
   transition: transform var(--cx-transition), box-shadow var(--cx-transition);
 }
 
 .cx-value-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--cx-shadow-md);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
 }
 
 .cx-value-icon {
@@ -98,10 +108,13 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  border-radius: var(--cx-radius-sm);
+  border-radius: 12px;
   background-color: var(--cx-icon-bg);
   color: var(--cx-icon-color);
   margin-bottom: var(--cx-space-sm);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .cx-value-title {
@@ -111,4 +124,37 @@
 
 .cx-value-desc {
   font-size: var(--cx-fs-sm);
+}
+
+/* ==================================================
+   DARK THEME — reference-matched card style
+   --------------------------------------------------
+   Same treatment as Why Codexa / Testimonials: radial
+   glow from the icon corner, top+left hairline border,
+   crisp icon border instead of glow.
+   ================================================== */
+[data-theme="dark"] .cx-about-stat,
+[data-theme="dark"] .cx-value-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-about-stat:hover,
+[data-theme="dark"] .cx-value-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .cx-value-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+}
+
+[data-theme="dark"] .cx-value-desc {
+  color: #94A3B8;
 }

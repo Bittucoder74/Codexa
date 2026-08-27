@@ -30,6 +30,7 @@
   /* ---------- Gradients (used sparingly, on the signature elements only) ---------- */
   --cx-gradient-brand: linear-gradient(135deg, var(--cx-primary) 0%, var(--cx-accent) 100%);
   --cx-gradient-glow: linear-gradient(135deg, var(--cx-secondary) 0%, var(--cx-primary) 100%);
+  --cx-gradient-accent-text: linear-gradient(90deg, #1D4ED8 0%, #7C3AED 55%, #DB2777 100%);
 
   /* ---------- Typography ---------- */
   --cx-font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
@@ -110,6 +111,8 @@
 
   --cx-navbar-bg: rgba(11, 18, 32, 0.72);
   --cx-navbar-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+
+  --cx-gradient-accent-text: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 55%, #EC4899 100%);
 
   color-scheme: dark;
 }

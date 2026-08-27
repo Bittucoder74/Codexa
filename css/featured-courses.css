@@ -65,14 +65,19 @@
 .cx-course-card::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--cx-gradient-brand);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--cx-transition);
+  background: var(--cx-icon-color, var(--cx-gradient-brand));
+  opacity: 0.7;
+  transform: scaleX(0.94);
+  transform-origin: center;
+  transition: transform var(--cx-transition), opacity var(--cx-transition);
+}
+
+[data-theme="dark"] .cx-course-card::before {
+  opacity: 0.85;
 }
 
 .cx-course-card:hover {
@@ -89,6 +94,24 @@
 }
 
 .cx-course-card:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.cx-course-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cx-gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cx-transition);
+}
+
+.cx-course-card:hover::after {
   transform: scaleX(1);
 }
 
@@ -121,14 +144,14 @@
   font-size: var(--cx-fs-lg);
   margin-bottom: 0.5rem;
   text-shadow:
-    0.75px 0.75px 1px rgba(255, 255, 255, 0.8),
-    -0.75px -0.75px 1px rgba(163, 177, 198, 0.3);
+    0px 1px 1px rgba(255, 255, 255, 0.9),
+    0px -1px 1px rgba(163, 177, 198, 0.4);
 }
 
 [data-theme="dark"] .cx-course-title {
   text-shadow:
-    0.75px 0.75px 1px rgba(255, 255, 255, 0.05),
-    -0.75px -0.75px 1px rgba(0, 0, 0, 0.5);
+    0px 1px 1px rgba(255, 255, 255, 0.05),
+    0px -1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .cx-course-desc {
@@ -144,6 +167,7 @@
   font-size: var(--cx-fs-xs);
   font-weight: 600;
   color: var(--cx-text-muted);
+  margin-top: auto;
   margin-bottom: var(--cx-space-md);
 }
 
@@ -154,16 +178,35 @@
   background-color: var(--cx-text-muted);
 }
 
-.cx-course-link {
-  margin-top: auto;
+.cx-course-duration {
   display: inline-flex;
   align-items: center;
+  gap: 0.3rem;
+}
+
+.cx-course-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.4rem;
+  width: 100%;
+  padding: 0.7rem 1.1rem;
+  border-radius: 12px;
+  background-color: var(--cx-bg-alt);
   font-family: var(--cx-font-display);
   font-size: var(--cx-fs-sm);
   font-weight: 700;
   color: var(--cx-heading);
-  transition: gap var(--cx-transition-fast), color var(--cx-transition-fast);
+  box-shadow:
+    4px 4px 9px rgba(163, 177, 198, 0.45),
+    -4px -4px 9px rgba(255, 255, 255, 0.9);
+  transition: gap var(--cx-transition-fast), color var(--cx-transition-fast), box-shadow var(--cx-transition-fast), transform var(--cx-transition-fast);
+}
+
+[data-theme="dark"] .cx-course-link {
+  box-shadow:
+    4px 4px 9px rgba(0, 0, 0, 0.45),
+    -4px -4px 9px rgba(255, 255, 255, 0.04);
 }
 
 .cx-course-link svg {
@@ -173,4 +216,90 @@
 .cx-course-card:hover .cx-course-link {
   color: var(--cx-primary);
   gap: 0.6rem;
+}
+
+.cx-course-link:active,
+.cx-course-link:focus-visible {
+  box-shadow:
+    inset 3px 3px 7px rgba(163, 177, 198, 0.5),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+  transform: translateY(1px);
+}
+
+[data-theme="dark"] .cx-course-link:active,
+[data-theme="dark"] .cx-course-link:focus-visible {
+  box-shadow:
+    inset 3px 3px 7px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.04);
+}
+
+/* ==================================================
+   DARK THEME — reference-matched card style
+   --------------------------------------------------
+   Flat bordered cards instead of neumorphic shadows,
+   solid colored icon tiles, colored category/price
+   text, bordered pill button. Overrides the shared
+   neumorphic rules above, dark theme only.
+   ================================================== */
+[data-theme="dark"] .cx-course-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-course-card:hover {
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .cx-course-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-course-category {
+  color: var(--cx-icon-color);
+}
+
+[data-theme="dark"] .cx-course-desc {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .cx-course-meta {
+  width: 100%;
+  padding-top: var(--cx-space-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .cx-course-duration svg {
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .cx-course-price {
+  color: var(--cx-icon-color);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .cx-course-link {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F1F5F9;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-course-card:hover .cx-course-link {
+  border-color: var(--cx-icon-color);
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .cx-course-link:active,
+[data-theme="dark"] .cx-course-link:focus-visible {
+  box-shadow: none;
+  transform: translateY(1px);
 }

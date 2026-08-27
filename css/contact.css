@@ -11,9 +11,12 @@
 
 .cx-contact-form-wrap {
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius-lg);
+  border: none;
+  border-radius: 20px;
   padding: var(--cx-space-lg);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
 }
 
 /* ---------- Info cards ---------- */
@@ -28,9 +31,20 @@
   align-items: flex-start;
   gap: 0.9rem;
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius);
+  border: none;
+  border-radius: 16px;
   padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+  transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+.cx-contact-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
 }
 
 .cx-contact-info-icon {
@@ -40,9 +54,12 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  border-radius: var(--cx-radius-sm);
+  border-radius: 12px;
   background-color: var(--cx-primary-light);
   color: var(--cx-primary);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .cx-contact-info-title {
@@ -91,4 +108,37 @@
   height: 100%;
   border: 0;
   display: block;
+}
+
+/* ==================================================
+   DARK THEME — reference-matched card style
+   --------------------------------------------------
+   Same treatment as the rest of the site: radial glow
+   from the top-left corner, top+left hairline border
+   using the standing site-wide border colors.
+   ================================================== */
+[data-theme="dark"] .cx-contact-form-wrap,
+[data-theme="dark"] .cx-contact-info-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+  transition: border-color var(--cx-transition-fast), box-shadow var(--cx-transition-fast);
+}
+
+[data-theme="dark"] .cx-contact-info-card:hover {
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .cx-contact-info-icon {
+  background-color: var(--cx-primary);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-primary);
+  border-color: color-mix(in srgb, var(--cx-primary) 75%, white 25%);
+}
+.cx-contact-form-wrap{
+  border-top: 1px solid #72a1e275;
+  border-left: 1px solid #72a1e275;
 }

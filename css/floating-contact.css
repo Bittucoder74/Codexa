@@ -20,7 +20,10 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  box-shadow: var(--cx-shadow-lg);
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.28),
+    inset 0 2px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.18);
   transition: transform var(--cx-transition-fast), box-shadow var(--cx-transition-fast);
 }
 
@@ -29,12 +32,27 @@
   transform: translateY(-3px) scale(1.05);
 }
 
+.cx-floating-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.25),
+    inset 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
 .cx-floating-btn-whatsapp {
   background-color: #25D366;
+  box-shadow:
+    0 8px 18px rgba(37, 211, 102, 0.45),
+    inset 0 2px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.15);
 }
 
 .cx-floating-btn-call {
   background: var(--cx-gradient-brand);
+  box-shadow:
+    0 8px 18px rgba(37, 61, 199, 0.45),
+    inset 0 2px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- Scroll to top ---------- */
@@ -45,6 +63,10 @@
   opacity: 0;
   transform: translateY(8px) scale(0.9);
   pointer-events: none;
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.35),
+    inset 0 2px 2px rgba(255, 255, 255, 0.12),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.3);
   transition: opacity var(--cx-transition-fast), transform var(--cx-transition-fast), box-shadow var(--cx-transition-fast);
 }
 

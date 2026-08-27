@@ -37,6 +37,7 @@
 }
 
 .cx-why-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -44,6 +45,7 @@
   border: none;
   border-radius: 16px;
   padding: var(--cx-space-md);
+  overflow: hidden;
   box-shadow:
     6px 6px 14px rgba(163, 177, 198, 0.4),
     -6px -6px 14px rgba(255, 255, 255, 0.9);
@@ -69,6 +71,46 @@
     -9px -9px 18px rgba(255, 255, 255, 0.04);
 }
 
+.cx-why-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cx-icon-color, var(--cx-gradient-brand));
+  opacity: 0.7;
+  transform: scaleX(0.94);
+  transform-origin: center;
+  transition: transform var(--cx-transition), opacity var(--cx-transition);
+}
+
+[data-theme="dark"] .cx-why-item::before {
+  opacity: 0.85;
+}
+
+.cx-why-item:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.cx-why-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cx-gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cx-transition);
+}
+
+.cx-why-item:hover::after {
+  transform: scaleX(1);
+}
+
 .cx-why-icon {
   display: inline-flex;
   align-items: center;
@@ -88,14 +130,14 @@
   font-size: var(--cx-fs-lg);
   margin-bottom: 0.5rem;
   text-shadow:
-    0.75px 0.75px 1px rgba(255, 255, 255, 0.8),
-    -0.75px -0.75px 1px rgba(163, 177, 198, 0.3);
+    0px 1px 1px rgba(255, 255, 255, 0.9),
+    0px -1px 1px rgba(163, 177, 198, 0.4);
 }
 
 [data-theme="dark"] .cx-why-item-title {
   text-shadow:
-    0.75px 0.75px 1px rgba(255, 255, 255, 0.05),
-    -0.75px -0.75px 1px rgba(0, 0, 0, 0.5);
+    0px 1px 1px rgba(255, 255, 255, 0.05),
+    0px -1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .cx-why-item-desc {
@@ -123,8 +165,8 @@
   color: #FFFFFF;
   max-width: 420px;
   text-shadow:
-    0.75px 0.75px 1px rgba(0, 0, 0, 0.5),
-    -0.75px -0.75px 1px rgba(255, 255, 255, 0.12);
+    0px 1px 1px rgba(0, 0, 0, 0.6),
+    0px -1px 1px rgba(255, 255, 255, 0.15);
 }
 
 .cx-why-item-featured .cx-why-item-desc {
@@ -144,4 +186,70 @@
   background-color: rgba(34, 211, 238, 0.12);
   padding: 0.4rem 0.85rem;
   border-radius: var(--cx-radius-pill);
+  box-shadow: 0 0 12px -3px var(--cx-secondary);
+}
+
+/* ==================================================
+   DARK THEME — reference-matched bento tile style
+   --------------------------------------------------
+   Same treatment as Featured Courses: radial glow from
+   the icon corner, top+left hairline border, crisp
+   icon border instead of glow, no bottom accent bar.
+   ================================================== */
+[data-theme="dark"] .cx-why-item {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-why-item:hover {
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .cx-why-item::before {
+  opacity: 0;
+}
+
+[data-theme="dark"] .cx-why-item:hover::before {
+  opacity: 0;
+}
+
+[data-theme="dark"] .cx-why-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-why-item-desc {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .cx-why-item-featured {
+  background: radial-gradient(120% 90% at 15% 0%, #12213F 0%, #070B18 55%, #04060D 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+}
+
+[data-theme="dark"] .cx-why-item-featured:hover {
+  border-color: rgb(102 245 255 / 60%);
+}
+
+[data-theme="dark"] .cx-why-icon-dark {
+  background-color: rgba(96, 165, 250, 0.15);
+  color: #93C5FD;
+  border: 2px solid rgba(147, 197, 253, 0.6);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-why-stat {
+  background-color: transparent;
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  color: #93C5FD;
+  box-shadow: none;
 }

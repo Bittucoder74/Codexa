@@ -27,19 +27,66 @@
 
 /* ---------- Card ---------- */
 .cx-testimonial-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
-  border-radius: var(--cx-radius);
+  border: none;
+  border-radius: 16px;
   padding: var(--cx-space-md);
+  overflow: hidden;
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
   transition: transform var(--cx-transition), box-shadow var(--cx-transition);
 }
 
 .cx-testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--cx-shadow-md);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
+}
+
+.cx-testimonial-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cx-icon-color, var(--cx-gradient-brand));
+  opacity: 0.7;
+  transform: scaleX(0.94);
+  transform-origin: center;
+  transition: transform var(--cx-transition), opacity var(--cx-transition);
+}
+
+[data-theme="dark"] .cx-testimonial-card::before {
+  opacity: 0.85;
+}
+
+.cx-testimonial-card:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.cx-testimonial-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cx-gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cx-transition);
+}
+
+.cx-testimonial-card:hover::after {
+  transform: scaleX(1);
 }
 
 .cx-testimonial-quote {
@@ -101,4 +148,37 @@
   background-color: #DCFCE7;
   padding: 0.3rem 0.75rem;
   border-radius: var(--cx-radius-pill);
+}
+
+/* ==================================================
+   DARK THEME — reference-matched card style
+   --------------------------------------------------
+   Same treatment as Why Codexa: radial glow from the
+   icon corner, top+left hairline border, crisp icon
+   border instead of glow. Bottom accent bar kept (it's
+   visible in this section's reference).
+   ================================================== */
+[data-theme="dark"] .cx-testimonial-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-testimonial-card:hover {
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .cx-why-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-testimonial-text {
+  color: #94A3B8;
 }
