@@ -171,7 +171,7 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
-[data-theme="dark"] .cx-why-icon {
+[data-theme="dark"] .cx-testimonial-card .cx-why-icon {
   background-color: var(--cx-icon-color);
   color: #F8FAFC;
   border: 2px solid var(--cx-icon-color);

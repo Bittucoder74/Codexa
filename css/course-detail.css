@@ -40,13 +40,39 @@
 .cx-course-hero-visual {
   border-radius: var(--cx-radius-lg);
   overflow: hidden;
-  box-shadow: var(--cx-shadow-lg);
+  box-shadow:
+    8px 8px 18px rgba(163, 177, 198, 0.4),
+    -8px -8px 18px rgba(255, 255, 255, 0.85);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgba(37, 99, 235, 0.35);
+  transition: border-color var(--cx-transition-fast), border-width var(--cx-transition-fast);
+}
+
+.cx-course-hero-visual:hover {
+  border-width: 2px 0 0 2px;
+  border-color: var(--cx-primary);
 }
 
 .cx-course-hero-thumb {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
+  transition: transform var(--cx-transition);
+}
+
+.cx-course-hero-visual:hover .cx-course-hero-thumb {
+  transform: scale(1.06);
+}
+
+[data-theme="dark"] .cx-course-hero-visual {
+  box-shadow: none;
+  border-color: rgb(116 185 255 / 45%);
+}
+
+[data-theme="dark"] .cx-course-hero-visual:hover {
+  border-width: 2px 0 0 2px;
+  border-color: rgb(102 245 255 / 60%);
 }
 
 .cx-course-visual-a { background: var(--cx-gradient-brand); }

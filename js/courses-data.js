@@ -27,6 +27,7 @@ const CX_COURSES = [
     price: '₹8,000',
     marketPrice: '₹15,000–₹30,000',
     thumbClass: 'cx-course-visual-a',
+    image: '/assets/images/courses/frontend.png',
     description: "Learn to build and ship real, live websites — from HTML/CSS fundamentals through Bootstrap, Tailwind, WordPress and modern AI-assisted workflows. Every project is hosted and deployed, not just handed in.",
     highlights: [
       'HTML5, CSS3 & Modern JavaScript (ES6+)',
@@ -59,6 +60,7 @@ const CX_COURSES = [
     price: '₹2,500',
     marketPrice: '₹3,000–₹6,000',
     thumbClass: 'cx-course-visual-b',
+    image: '/assets/images/courses/office.png',
     description: "A practical, foundation-first course in Word, Excel and PowerPoint, plus how to actually use AI tools like ChatGPT and Copilot to work faster — the single most useful skill for almost any office job.",
     highlights: [
       'Computer & Internet Fundamentals',
@@ -90,6 +92,7 @@ const CX_COURSES = [
     price: '₹4,500',
     marketPrice: '₹5,000–₹10,000',
     thumbClass: 'cx-course-visual-c',
+    image: '/assets/images/courses/excel.png',
     description: "Go from core formulas to XLOOKUP, Pivot Tables, Power Query, Power Pivot and VBA/Macros — with Copilot in Excel and ChatGPT integrated into how you actually build reports and dashboards.",
     highlights: [
       'Core Formulas & Cell Referencing',
@@ -121,6 +124,7 @@ const CX_COURSES = [
     price: '₹9,000',
     marketPrice: '₹20,000–₹35,000',
     thumbClass: 'cx-course-visual-d',
+    image: '/assets/images/courses/backend.png',
     description: "Learn PHP, SQL and MySQL fundamentals through to Laravel and Node.js/Express — building real REST APIs with authentication, using ChatGPT, Supabase and Cursor AI as part of the actual workflow.",
     highlights: [
       'PHP, SQL & MySQL Fundamentals',
@@ -152,6 +156,7 @@ const CX_COURSES = [
     price: '₹10,000',
     marketPrice: '₹25,000–₹42,000',
     thumbClass: 'cx-course-visual-e',
+    image: '/assets/images/courses/ui.png',
     description: "Learn Figma, design systems and real user research to design products people can actually use — not just admire. Finish with 2–3 complete portfolio case studies, with Figma AI and Uizard woven into the process.",
     highlights: [
       'UX Research, User Flow & Personas',
@@ -183,6 +188,7 @@ const CX_COURSES = [
     price: '₹15,000',
     marketPrice: '₹50,000–₹65,000',
     thumbClass: 'cx-course-visual-a',
+    image: '/assets/images/courses/fullstack.png',
     description: "An intensive, end-to-end program covering HTML/CSS/JS through PHP, SQL, Laravel, WordPress and MySQL, finishing in a deployed capstone application. Runs 4 days a week.",
     highlights: [
       'HTML, CSS, JavaScript & Bootstrap',
@@ -214,6 +220,7 @@ const CX_COURSES = [
     price: '₹7,000',
     marketPrice: '₹15,000–₹30,000',
     thumbClass: 'cx-course-visual-f',
+    image: '/assets/images/courses/digital.png',
     description: "SEO, paid ads, social media marketing and analytics, taught by our dedicated Digital Marketing faculty — kept as a specialist-taught course rather than stretched across a generalist trainer.",
     highlights: [
       'SEO Fundamentals & Content Marketing',

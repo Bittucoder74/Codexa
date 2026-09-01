@@ -89,7 +89,15 @@
     document.title = `${course.title} — Codexa Tech Academy`;
 
     document.getElementById('cxCourseBreadcrumb').textContent = course.title;
-    document.getElementById('cxCourseThumb').className = `cx-course-hero-thumb ${course.thumbClass}`;
+    const cxThumbEl = document.getElementById('cxCourseThumb');
+    cxThumbEl.className = `cx-course-hero-thumb ${course.thumbClass}`;
+    if (course.image) {
+      cxThumbEl.style.backgroundImage = `url('${course.image}')`;
+      cxThumbEl.style.backgroundSize = 'cover';
+      cxThumbEl.style.backgroundPosition = 'center';
+    } else {
+      cxThumbEl.style.backgroundImage = '';
+    }
     document.getElementById('cxCourseTagline').textContent = course.tagline;
     document.getElementById('cxCourseDuration').textContent = course.duration;
     document.getElementById('cxCoursePrice').textContent = course.price;

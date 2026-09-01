@@ -75,6 +75,16 @@
   margin: 0;
 }
 
+/* Extra links (e.g. Refund Policy) that only make sense to show
+   in the mobile hamburger menu, where there's vertical room to
+   spare — hidden on desktop to keep the primary nav short.
+   Un-hidden again inside the mobile breakpoint in responsive.css.
+   Two classes combined for specificity, so this reliably wins
+   over the plain .cx-navbar-link's display: inline-block. */
+a.cx-navbar-link.cx-navbar-link-mobile-only {
+  display: none;
+}
+
 .cx-navbar-link {
   position: relative;
   display: inline-block;

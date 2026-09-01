@@ -15,9 +15,22 @@
 /* ---------- Form wrapper ---------- */
 .cx-admission-form-wrap {
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
+  border: none;
   border-radius: var(--cx-radius-lg);
   padding: var(--cx-space-lg);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #72a1e275;
+  border-left: 1px solid #72a1e275;
+}
+
+[data-theme="dark"] .cx-admission-form-wrap {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
 }
 
 /* ---------- Sidebar ---------- */
@@ -30,9 +43,27 @@
 .cx-admission-steps,
 .cx-admission-contact-card {
   background-color: var(--cx-bg-alt);
-  border: 1px solid var(--cx-border);
+  border: none;
   border-radius: var(--cx-radius);
   padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .cx-admission-steps,
+[data-theme="dark"] .cx-admission-contact-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+  transition: border-color var(--cx-transition-fast);
+}
+
+[data-theme="dark"] .cx-admission-steps:hover,
+[data-theme="dark"] .cx-admission-contact-card:hover {
+  border-color: rgb(102 245 255 / 60%);
 }
 
 .cx-admission-steps-title,
@@ -67,6 +98,13 @@
   font-family: var(--cx-font-display);
   font-size: var(--cx-fs-xs);
   font-weight: 800;
+}
+
+[data-theme="dark"] .cx-admission-step-number {
+  background-color: var(--cx-primary);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-primary);
+  border-color: color-mix(in srgb, var(--cx-primary) 75%, white 25%);
 }
 
 .cx-admission-step-title {

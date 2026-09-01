@@ -1,0 +1,72 @@
+/* ==================================================
+   PAGE: REFUND & CANCELLATION POLICY
+   --------------------------------------------------
+   Reuses .cx-value-grid/.cx-value-card (about.css) for
+   the quick-summary cards, and .cx-faq-item/.cx-faq-question
+   (faq-section.css) for the 19-section accordion, so this
+   file only adds what's unique to the policy page.
+   ================================================== */
+
+.cx-policy-summary-header {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--cx-space-xl);
+}
+
+.cx-policy-summary-heading {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cx-policy-summary-desc {
+  font-size: var(--cx-fs-lg);
+}
+
+/* ---------- Full policy section ---------- */
+.cx-policy-container {
+  max-width: 820px;
+}
+
+.cx-policy-intro {
+  margin-bottom: var(--cx-space-xl);
+}
+
+.cx-policy-intro p {
+  color: var(--cx-text);
+  font-size: var(--cx-fs-base);
+  line-height: 1.7;
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-policy-number {
+  color: var(--cx-primary);
+  font-weight: 800;
+  margin-right: 0.35rem;
+}
+
+/* Slightly tighter line length for long-form legal paragraphs
+   than the FAQ page uses, since these run much longer. */
+.cx-policy-list .cx-faq-answer-text {
+  max-width: none;
+}
+
+.cx-policy-legal-notice {
+  margin-top: var(--cx-space-xl);
+  padding: var(--cx-space-md);
+  background-color: var(--cx-bg-alt);
+  border-radius: var(--cx-radius);
+  border: 1px solid var(--cx-border);
+}
+
+.cx-policy-legal-notice h3 {
+  font-size: var(--cx-fs-lg);
+  margin-bottom: 0.5rem;
+  color: var(--cx-heading);
+}
+
+.cx-policy-legal-notice p {
+  color: var(--cx-text-muted);
+  font-size: var(--cx-fs-sm);
+  line-height: 1.7;
+}

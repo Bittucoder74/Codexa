@@ -26,9 +26,14 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.codexatechacademy.com/pages/gallery.html</loc>
+    <loc>https://www.codexatechacademy.com/pages/services.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.codexatechacademy.com/pages/refund-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.codexatechacademy.com/pages/placement.html</loc>

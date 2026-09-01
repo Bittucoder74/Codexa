@@ -1,0 +1,580 @@
+/* ==================================================
+   PAGE: SERVICES
+   --------------------------------------------------
+   Follows the site's established card language:
+   light theme = soft neumorphic shadow, dark theme =
+   radial-glow background + top/left hairline border
+   (rgb(116 185 255 / 45%) default, rgb(102 245 255 / 60%)
+   on hover) — same pattern as courses / why-codexa /
+   about / contact / admission.
+   ================================================== */
+
+/* ---------- Shared section heading ---------- */
+.cx-section-heading-wrap {
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--cx-space-lg);
+  text-align: center;
+}
+
+.cx-section-heading {
+  margin-top: 0.75rem;
+}
+
+.cx-svc-directory-intro {
+  margin-top: var(--cx-space-sm);
+  color: var(--cx-text-muted);
+}
+
+.cx-svc-directory-intro a {
+  color: var(--cx-primary);
+  font-weight: 600;
+}
+
+/* ==================================================
+   SECTION 1 — HERO
+   ================================================== */
+.cx-svc-hero {
+  padding-block: var(--cx-space-2xl) var(--cx-space-xl);
+  background-color: var(--cx-primary-light);
+  text-align: center;
+}
+
+.cx-svc-hero .cx-breadcrumb {
+  justify-content: center;
+}
+
+.cx-svc-hero-heading {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-top: 0.75rem;
+}
+
+.cx-svc-hero-desc {
+  max-width: 620px;
+  margin-inline: auto;
+  margin-top: var(--cx-space-sm);
+  font-size: var(--cx-fs-lg);
+}
+
+.cx-svc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: var(--cx-space-lg);
+}
+
+/* ==================================================
+   SECTION 2 — WHAT WE DO
+   ================================================== */
+.cx-svc-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--cx-space-lg);
+}
+
+.cx-svc-intro-card {
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius-lg);
+  padding: var(--cx-space-lg);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .cx-svc-intro-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+.cx-svc-intro-tag {
+  display: inline-block;
+  font-size: var(--cx-fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cx-primary);
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-svc-intro-title {
+  font-size: var(--cx-fs-xl);
+  margin-bottom: 0.6rem;
+}
+
+.cx-svc-intro-desc {
+  color: var(--cx-text-muted);
+  line-height: 1.7;
+}
+
+/* ==================================================
+   SECTION 3 — SERVICE CATEGORIES
+   ================================================== */
+.cx-svc-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--cx-space-md);
+}
+
+.cx-svc-cat-card-wide {
+  grid-column: span 4;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cx-space-md);
+}
+
+.cx-svc-cat-card-wide .cx-svc-cat-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.cx-svc-cat-card {
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius);
+  padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+  transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+.cx-svc-cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .cx-svc-cat-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-svc-cat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.cx-svc-cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--cx-icon-bg);
+  color: var(--cx-icon-color);
+  margin-bottom: var(--cx-space-sm);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .cx-svc-cat-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+  box-shadow: none;
+}
+
+.cx-svc-cat-title {
+  font-size: var(--cx-fs-lg);
+  margin-bottom: 0.4rem;
+}
+
+.cx-svc-cat-desc {
+  font-size: var(--cx-fs-sm);
+  color: var(--cx-text-muted);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   SECTION 4 — FEATURED SERVICES
+   ================================================== */
+.cx-svc-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--cx-space-md);
+}
+
+.cx-svc-feature-card {
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius);
+  padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+  transition: transform var(--cx-transition), box-shadow var(--cx-transition);
+}
+
+.cx-svc-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    9px 9px 18px rgba(163, 177, 198, 0.45),
+    -9px -9px 18px rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] .cx-svc-feature-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .cx-svc-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(102 245 255 / 60%);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.cx-svc-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--cx-icon-bg);
+  color: var(--cx-icon-color);
+  margin-bottom: var(--cx-space-sm);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .cx-svc-feature-icon {
+  background-color: var(--cx-icon-color);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-icon-color);
+  border-color: color-mix(in srgb, var(--cx-icon-color) 75%, white 25%);
+  box-shadow: none;
+}
+
+.cx-svc-feature-title {
+  font-size: var(--cx-fs-lg);
+  margin-bottom: 0.5rem;
+}
+
+.cx-svc-feature-desc {
+  font-size: var(--cx-fs-sm);
+  color: var(--cx-text-muted);
+  line-height: 1.65;
+}
+
+/* ==================================================
+   SECTION 5 — COMPLETE SERVICE DIRECTORY (accordion)
+   ================================================== */
+.cx-svc-directory-list {
+  max-width: 780px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-sm);
+}
+
+.cx-svc-accordion {
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius);
+  padding: var(--cx-space-sm) var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .cx-svc-accordion {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+.cx-svc-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: var(--cx-space-xs);
+  cursor: pointer;
+  list-style: none;
+}
+
+.cx-svc-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.cx-svc-accordion-title {
+  font-family: var(--cx-font-display);
+  font-size: var(--cx-fs-lg);
+  font-weight: 700;
+  color: var(--cx-heading);
+}
+
+.cx-svc-accordion-chevron {
+  flex-shrink: 0;
+  color: var(--cx-primary);
+  transition: transform var(--cx-transition-fast);
+}
+
+.cx-svc-accordion[open] .cx-svc-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.cx-svc-accordion-body {
+  padding-top: var(--cx-space-sm);
+  padding-bottom: var(--cx-space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cx-space-sm);
+  border-top: 1px solid var(--cx-border);
+  margin-top: var(--cx-space-xs);
+}
+
+[data-theme="dark"] .cx-svc-accordion-body {
+  border-top-color: rgb(116 185 255 / 20%);
+}
+
+.cx-svc-directory-item h4 {
+  font-size: var(--cx-fs-base);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.cx-svc-directory-item p {
+  font-size: var(--cx-fs-sm);
+  color: var(--cx-text-muted);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   SECTION 6 — BUSINESS PARTNERSHIP
+   ================================================== */
+.cx-svc-partner-panel {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius-lg);
+  padding: var(--cx-space-xl) var(--cx-space-lg);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .cx-svc-partner-panel {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+.cx-svc-partner-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: var(--cx-primary-light);
+  color: var(--cx-primary);
+  margin-bottom: var(--cx-space-md);
+  box-shadow:
+    inset 2px 2px 5px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .cx-svc-partner-icon {
+  background-color: var(--cx-primary);
+  color: #F8FAFC;
+  border: 2px solid var(--cx-primary);
+  border-color: color-mix(in srgb, var(--cx-primary) 75%, white 25%);
+  box-shadow: none;
+}
+
+.cx-svc-partner-title {
+  margin-bottom: 0.75rem;
+}
+
+.cx-svc-partner-desc {
+  color: var(--cx-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--cx-space-md);
+}
+
+.cx-svc-partner-list {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: var(--cx-space-lg);
+}
+
+.cx-svc-partner-list li {
+  font-size: var(--cx-fs-xs);
+  font-weight: 600;
+  color: var(--cx-primary);
+  background-color: var(--cx-primary-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--cx-radius-pill);
+}
+
+[data-theme="dark"] .cx-svc-partner-list li {
+  background-color: transparent;
+  border: 1px solid rgb(116 185 255 / 45%);
+  color: #93C5FD;
+}
+
+/* ==================================================
+   SECTION 7 — WHY CHOOSE CODEXA
+   ================================================== */
+.cx-svc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--cx-space-md);
+}
+
+.cx-svc-why-card {
+  background-color: var(--cx-bg-alt);
+  border: none;
+  border-radius: var(--cx-radius);
+  padding: var(--cx-space-md);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.4),
+    -6px -6px 14px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .cx-svc-why-card {
+  background: radial-gradient(120% 90% at 15% 0%, #16223F 0%, #0B1224 50%, #060910 100%);
+  border-style: solid;
+  border-width: 1px 0 0 1px;
+  border-color: rgb(116 185 255 / 45%);
+  box-shadow: none;
+}
+
+.cx-svc-why-card h3 {
+  font-size: var(--cx-fs-base);
+  margin-bottom: 0.4rem;
+}
+
+.cx-svc-why-card p {
+  font-size: var(--cx-fs-sm);
+  color: var(--cx-text-muted);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   SECTION 8 — PRICING VALUE
+   ================================================== */
+.cx-svc-pricing-panel {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cx-svc-pricing-heading {
+  margin-bottom: var(--cx-space-sm);
+}
+
+.cx-svc-pricing-desc {
+  color: var(--cx-text-muted);
+  font-size: var(--cx-fs-lg);
+  line-height: 1.75;
+}
+
+/* ==================================================
+   SECTION 9 — PROJECT DISCUSSION CTA
+   (re-uses .cx-cta-* tokens from cta.css for the panel
+   background/glow/heading so it matches the sitewide CTA)
+   ================================================== */
+.cx-svc-final-cta-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--cx-gradient-brand);
+  border-radius: var(--cx-radius-lg);
+  padding: var(--cx-space-2xl) var(--cx-space-lg);
+}
+
+.cx-svc-final-cta-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cx-svc-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cx-svc-cat-card-wide {
+    grid-column: span 2;
+  }
+
+  .cx-svc-featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cx-svc-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cx-svc-intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-svc-cat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-svc-cat-card-wide {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+
+  .cx-svc-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-svc-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cx-svc-hero-actions,
+  .cx-svc-final-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cx-svc-hero-actions .cx-btn,
+  .cx-svc-final-cta-actions .cx-btn {
+    width: 100%;
+  }
+}
