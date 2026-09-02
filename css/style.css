@@ -94,6 +94,10 @@ p {
   border-radius: var(--cx-radius-pill);
 }
 
+[data-theme="dark"] .cx-eyebrow {
+  color: #70EEFF;
+}
+
 /* ---------- Buttons ---------- */
 .cx-btn {
   display: inline-flex;
