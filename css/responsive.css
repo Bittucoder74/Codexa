@@ -395,6 +395,10 @@
     grid-column: span 2;
     grid-row: span 1;
   }
+
+  .cx-why-item-wide {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -408,6 +412,11 @@
 
   .cx-why-item-featured .cx-why-item-title {
     font-size: var(--cx-fs-xl);
+  }
+
+  .cx-why-item-wide {
+    grid-column: span 1;
+    flex-direction: column;
   }
 }
 

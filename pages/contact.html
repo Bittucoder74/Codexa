@@ -112,6 +112,7 @@
                 <option value="general">General Inquiry</option>
                 <option value="courses">Course Information</option>
                 <option value="admission">Admission Support</option>
+                <option value="services">Services Inquiry</option>
                 <option value="placement">Placement Support</option>
                 <option value="partnership">Partnership / Hiring</option>
                 <option value="other">Other</option>
@@ -179,7 +180,7 @@
             </span>
             <div>
               <span class="cx-contact-info-title">Office Hours</span>
-              <span class="cx-contact-info-desc">Mon – Sat, 9:00 AM – 7:00 PM</span>
+              <span class="cx-contact-info-desc">Mon – Sun (Everyday), 9:00 AM – 8:00 PM</span>
             </div>
           </div>
 
@@ -194,7 +195,7 @@
         <div class="cx-contact-map cx-reveal">
           <iframe
             title="Codexa Tech Academy location"
-            src="https://maps.google.com/maps?q=Dunlop%20Bridge%2C%20Baranagar%2C%20Kolkata%2C%20West%20Bengal%20700108&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Dunlop%20Bridge%2C%20Baranagar%2C%20Kolkata-700108&t=&z=14&ie=UTF8&iwloc=&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -214,5 +215,42 @@
   <script src="/js/bootstrap.bundle.min.js"></script>
   <script src="/js/include.js"></script>
   <script src="/js/app.js"></script>
+
+  <script>
+    (function () {
+      // Preselect "Services Inquiry" when arriving from the Services page (?subject=services)
+      var params = new URLSearchParams(window.location.search);
+      var subjectParam = params.get('subject');
+      var subjectEl = document.getElementById('cxContactSubject');
+      if (subjectParam && subjectEl) {
+        subjectEl.value = subjectParam;
+      }
+
+      // Rotate the message placeholder through English / Bengali / Hindi
+      // (typed in English letters) so people who aren't confident writing
+      // in English see it's completely fine to write in their own language.
+      var messageEl = document.getElementById('cxContactMessage');
+      if (messageEl) {
+        var placeholders = [
+          'How can we help?',
+          'Bangla te likhun — jemon: Web design course ta niye jante chai',
+          'Hindi mein likhein — jaise: Mujhe web design course ke baare mein jaanna hai'
+        ];
+        var i = 0;
+        var rotate;
+        var startRotation = function () {
+          rotate = setInterval(function () {
+            if (document.activeElement === messageEl || messageEl.value) {
+              clearInterval(rotate);
+              return;
+            }
+            i = (i + 1) % placeholders.length;
+            messageEl.setAttribute('placeholder', placeholders[i]);
+          }, 4000);
+        };
+        setTimeout(startRotation, 3000);
+      }
+    })();
+  </script>
 </body>
 </html>
